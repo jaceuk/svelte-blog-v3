@@ -6,7 +6,7 @@
 <div class="container">
   <div class="inner">
     <a class="logo-link" href="/">
-      <img class="image" src={logo} alt="" />
+      <img class="logo" src={logo} alt="" />
     </a>
 
     <nav>
@@ -20,7 +20,7 @@
 
 <style lang="scss">
   .container {
-    padding: var(--size-medium) 0 0 0;
+    margin: var(--size-medium);
     z-index: 50;
   }
 
@@ -32,6 +32,13 @@
 
   .logo-link {
     z-index: 20;
+    width: 65px;
+    height: 65px;
+  }
+
+  .logo {
+    width: 100%;
+    height: 100%;
   }
 
   .link {
@@ -48,13 +55,13 @@
   }
 
   a:nth-child(2).active ~ .underline {
-    transform: translatex(103px);
+    transform: translatex(109px);
     transition: transform 0.2s ease-out;
-    width: 76px;
+    width: 80px;
   }
 
   a:nth-child(3).active ~ .underline {
-    transform: translatex(195px);
+    transform: translatex(205px);
     transition: transform 0.2s ease-out;
     width: 104px;
   }
@@ -71,9 +78,9 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 87px;
+    width: 93px;
     height: 4px;
-    background: var(--color-white);
+    background: var(--color-orange);
     border-radius: 28px;
     z-index: -1;
     transition: 9999s transform 0.2s ease-out;

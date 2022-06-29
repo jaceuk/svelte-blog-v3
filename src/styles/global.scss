@@ -4,61 +4,29 @@ a {
 
 body {
   overflow-x: hidden;
+  background: var(--color-black);
+  padding: var(--size-medium);
 }
 
-.inner {
+.wrapper {
   max-width: var(--size-max-width);
-  margin: 0 auto;
-  padding: 0 var(--size-base);
-  position: relative;
-}
-
-.stack {
+  margin: auto;
   display: grid;
-  gap: var(--size-base);
-
-  &.small {
-    gap: var(--size-small);
-  }
-
-  &.medium {
-    gap: var(--size-medium);
-  }
-
-  &.large {
-    gap: var(--size-large);
-  }
-
-  &.justify-center {
-    justify-content: center;
-  }
+  gap: var(--size-medium);
 }
 
-.row {
-  display: flex;
-  align-items: stretch;
-  gap: var(--size-medium);
-  flex-direction: row;
-  flex-wrap: wrap;
+.panel {
+  background: linear-gradient(135deg, rgba(65, 65, 65, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  border-radius: var(--border-radius-medium);
+  box-shadow: inset 0px 0px 0px 4px var(--color-grey);
+}
 
-  &.center {
-    align-items: center;
-  }
+.orange-text {
+  color: var(--color-orange);
+}
 
-  &.flex-start {
-    align-items: flex-start;
-  }
-
-  > * {
-    flex-basis: 0;
-    flex-grow: 1;
-    width: 100%;
-  }
-
-  @media (max-width: 767px) {
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
+.white-text {
+  color: var(--color-white);
 }
 
 .button {
@@ -92,54 +60,4 @@ body {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-.tags {
-  display: flex;
-  gap: 1.6rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.tag {
-  background: var(--color-pale-grey);
-  border-radius: var(--border-radius-large);
-  padding: var(--size-base);
-  display: inline-block;
-}
-
-.box {
-  display: flex;
-  justify-content: flex-start;
-
-  &.justify-center {
-    justify-content: center;
-  }
-}
-
-blockquote {
-  background: var(--color-pale-grey);
-  padding: var(--size-medium);
-  border-left: var(--size-small) solid var(--color-nearly-black-80);
-  font-style: italic;
-}
-
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
-blockquote p {
-  display: inline;
-}
-
-ul {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--size-base);
 }

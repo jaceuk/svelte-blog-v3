@@ -1,24 +1,22 @@
-<div class="title">
-  <h1>Jason Newington</h1>
-  <div class="h3">Developer . Designer . Geek</div>
+<div class="title-container">
+  <div class="title">
+    <h1 class="large">Jason Newington</h1>
+    <div class="h3">Creating out of this world websites!</div>
+  </div>
 </div>
 
-<style lang="scss">
-  .title {
-    text-align: left;
-    z-index: 20;
-    max-width: 608px;
-    padding-top: var(--size-extra-large);
-    padding-bottom: var(--size-extra-large);
-
-    @media (max-width: 767px) {
-      text-align: center;
-    }
+<style>
+  h1 {
+    padding-bottom: var(--size-base);
   }
 
-  h1 {
-    font-size: var(--font-size-max);
-    line-height: 1.05;
-    margin-bottom: var(--size-medium);
+  .title {
+    border-left: 8px solid var(--color-orange);
+    padding-left: calc(var(--size-extra-large) - 8px);
+  }
+
+  .title-container {
+    margin: var(--size-max) 0;
+    max-width: 650px;
   }
 </style>

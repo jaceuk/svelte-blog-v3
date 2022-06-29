@@ -6,48 +6,59 @@
   import Card from '@components/Card.svelte';
 </script>
 
-<div class="inner">
-  <Card>
-    <h2>{developer.title}</h2>
-    <div class="row flex-start">
-      <div class="stack">
-        {#each developer.text as paragraph}
-          <p>{paragraph}</p>
-        {/each}
-      </div>
-      <div class="tags">
-        {#each skills.sort() as skill}
-          <div class="tag">
-            {skill}
-          </div>
-        {/each}
-      </div>
-    </div>
-  </Card>
+<div class="panel">
+  <div>
+    <h2 class="h1 orange-text">{developer.title}</h2>
 
-  <div class="row">
-    <Card>
-      <h2>{designer.title}</h2>
-      {#each designer.text as paragraph}
-        <p>{paragraph}</p>
-      {/each}
-    </Card>
+    {#each developer.text as paragraph}
+      <p>{paragraph}</p>
+    {/each}
+  </div>
 
-    <Card>
-      <h2>{geek.title}</h2>
-      {#each geek.text as paragraph}
-        <p>{paragraph}</p>
-      {/each}
-    </Card>
+  <div class="callout">
+    <div>Experience</div>
+    <div class="h1">20+</div>
+    <div>years</div>
+  </div>
+
+  <div class="callout">
+    <div>Projects</div>
+    <div class="h1">??</div>
+    <div>Lost count years ago!</div>
+  </div>
+
+  <div class="tags">
+    {#each skills.primary.sort() as skill}
+      <div class="tag">
+        {skill}
+      </div>
+    {/each}
+    {#each skills.secondary.sort() as skill}
+      <div class="tag">
+        {skill}
+      </div>
+    {/each}
+  </div>
+
+  <div>
+    <h2>{designer.title}</h2>
+    {#each designer.text as paragraph}
+      <p>{paragraph}</p>
+    {/each}
+  </div>
+
+  <div>
+    <h2>{geek.title}</h2>
+    {#each geek.text as paragraph}
+      <p>{paragraph}</p>
+    {/each}
   </div>
 </div>
 
-<style lang="scss">
-  .inner {
-    padding-bottom: var(--size-extra-large);
-    background: url('../images/vader.png') no-repeat right bottom;
-    display: flex;
-    gap: var(--size-medium);
-    flex-direction: column;
+<style>
+  .panel {
+    padding: var(--size-extra-large);
+    display: grid;
+    gap: var(--size-extra-large);
   }
 </style>

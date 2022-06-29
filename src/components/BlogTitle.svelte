@@ -1,22 +1,21 @@
-<div class="title">
-  <h1>Blog posts</h1>
-  <div class="body">Every time I learn something new it pushes some old stuff out</div>
+<div class="title-container">
+  <div class="title">
+    <h1>Blog posts</h1>
+  </div>
 </div>
 
-<style lang="scss">
-  .title {
-    text-align: left;
-    z-index: 20;
-    max-width: 608px;
-    padding-top: var(--size-large);
-    padding-bottom: var(--size-large);
-
-    @media (max-width: 767px) {
-      text-align: center;
-    }
+<style>
+  h1 {
+    padding-bottom: var(--size-base);
   }
 
-  h1 {
-    margin-bottom: var(--size-base);
+  .title {
+    border-left: 8px solid var(--color-orange);
+    padding-left: calc(var(--size-extra-large) - 8px);
+  }
+
+  .title-container {
+    margin: var(--size-medium) 0;
+    max-width: 650px;
   }
 </style>

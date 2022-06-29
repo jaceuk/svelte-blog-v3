@@ -1,1 +1,4 @@
-["HTML", "CSS/Sass", "Accessiblity", "Javascript", "React", "SEO", "PHP", "Bootstrap", "MySQL", "WordPress"]
+{
+  "primary": ["HTML", "CSS/Sass", "Accessiblity", "Javascript", "React", "Sveltekit"],
+  "secondary": ["PHP", "Bootstrap", "MySQL", "WordPress", "NodeJS", "SEO"]
+}
