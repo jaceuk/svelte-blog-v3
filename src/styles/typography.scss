@@ -14,7 +14,7 @@ h4,
 h5,
 h6 {
   font-family: 'Poppins', sans-serif;
-  line-height: 1.05;
+  line-height: 1.25;
 }
 
 html {
@@ -42,6 +42,7 @@ h1,
 
   &.large {
     font-size: var(--font-size-max);
+    line-height: 1.05;
   }
 }
 
@@ -57,4 +58,9 @@ h3,
   font-size: var(--font-size-h3);
   font-weight: var(--font-weight-light);
   color: var(--color-orange);
+}
+
+.small {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
 }

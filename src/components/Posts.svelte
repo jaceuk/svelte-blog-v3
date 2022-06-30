@@ -1,6 +1,6 @@
 <script lang="ts">
   import Pagination from '@components/Pagination.svelte';
-  import PostCard from '@components/PostCard.svelte';
+  import Card from '@components/Card.svelte';
 
   export let posts: any;
   export let page: number;
@@ -8,25 +8,24 @@
   export let tag: string = '';
 </script>
 
-<div class="inner">
+<div class="panel">
   <div class="grid">
     {#each posts as post}
-      <PostCard {post} />
+      <Card title={post.title} intro={post.intro} date={post.date} tags={post.tags} />
     {/each}
   </div>
   <Pagination {page} {postCount} {tag} />
 </div>
 
 <style type="scss">
-  .inner {
-    padding-bottom: var(--size-medium);
-    background: url('../images/vader.png') no-repeat right bottom;
+  .panel {
+    padding: var(--size-extra-large);
   }
 
   .grid {
     display: grid;
     grid-auto-flow: row;
-    grid-gap: var(--size-medium);
+    grid-gap: var(--size-extra-large);
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
     padding-bottom: var(--size-large);

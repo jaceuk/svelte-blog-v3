@@ -1,46 +1,91 @@
 <script lang="ts">
-  import { fly } from 'svelte/transition';
-  import { sineOut } from 'svelte/easing';
-  import { inview } from 'svelte-inview';
+  import PostMeta from '@components/PostMeta.svelte';
 
-  let isInView: boolean;
-
-  const options = {
-    unobserveOnEnter: true,
-  };
-
-  interface IProps {
-    detail: any;
-  }
-
-  const handleEnter = ({ detail }: IProps) => {
-    isInView = detail.inView;
-  };
+  export let imageSRC: string = '';
+  export let date: string = '';
+  export let tags: [] = [];
+  export let type: string = '';
+  export let title: string;
+  export let intro: string;
 </script>
 
-<div use:inview={options} on:enter={handleEnter}>
-  {#key isInView}
-    <div class="card" in:fly={{ y: 50, duration: 400, easing: sineOut }}>
-      <slot />
+<div class="container">
+  {#if imageSRC}
+    <div class="image-container">
+      <img src={imageSRC} alt="" />
     </div>
-  {/key}
+  {/if}
+
+  <div class="card">
+    <div class="text-container">
+      <div class="title-container">
+        <div class="title">
+          {#if type}
+            <div class="type">{type}</div>
+          {/if}
+          <h2 class="white-text">{title}</h2>
+          {#if date}
+            <PostMeta {date} {tags} />
+          {/if}
+        </div>
+      </div>
+
+      <div class="text">{intro}</div>
+    </div>
+  </div>
 </div>
 
-<style lang="scss">
-  .card {
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-medium);
-    background: var(--color-white);
-    border-radius: var(--border-radius-large);
-    padding: var(--size-medium);
-    box-shadow: 0px 3px 24px var(--color-nearly-black-20);
+<style>
+  .container {
     height: 100%;
+    display: flex;
+    gap: var(--size-base);
+    flex-direction: column;
+  }
 
-    @media (max-width: 767px) {
-      padding: var(--size-base);
-      border-radius: var(--border-radius-medium);
-      gap: var(--size-base);
-    }
+  .card {
+    border-radius: var(--border-radius-medium);
+    width: 100%;
+    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.25);
+    background: var(--color-dark-grey);
+    overflow: hidden;
+    flex-grow: 1;
+  }
+
+  h2 {
+    padding-bottom: var(--size-base);
+  }
+
+  .text-container {
+    padding-top: var(--size-large);
+  }
+
+  .title {
+    border-left: 4px solid var(--color-orange);
+    padding-left: calc(var(--size-large) - 4px);
+  }
+
+  .type {
+    color: var(--color-orange);
+    text-transform: uppercase;
+    margin-bottom: var(--size-base);
+    font-weight: var(--font-weight-light);
+    letter-spacing: 1px;
+  }
+
+  .image-container {
+    background: var(--color-black);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+  }
+
+  img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .text {
+    padding: var(--size-medium) var(--size-large) var(--size-large) var(--size-large);
   }
 </style>

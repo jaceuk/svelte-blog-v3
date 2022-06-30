@@ -1,7 +1,7 @@
 ---
 title: 'Generating unique IDs in React'
 date: '2022-06-11'
-excerpt: 'Unique IDs are essential for writing accessible code and now, with React 18, things just got allot easier.'
+intro: 'Unique IDs are essential for writing accessible code and now, with React 18, things just got allot easier.'
 tags: ['React']
 ---
 

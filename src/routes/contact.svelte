@@ -88,87 +88,83 @@
     defer></script>
 </svelte:head>
 
-<div class="inner">
-  <div class="narrowContainer">
-    <div class="row">
-      <Card>
-        <h2>Contact form</h2>
+<div class="panel">
+  <div class="h3">Please get in touch to talk about, well, anything really.</div>
 
-        {#if processing}
-          <Overlay><Loader>Sending your message</Loader></Overlay>
-        {/if}
+  <div>
+    {#if processing}
+      <Overlay><Loader>Sending your message</Loader></Overlay>
+    {/if}
 
-        {#if outcome.status === 200}
-          <Alert type="success">Your message was sent successfully.</Alert>
-        {/if}
+    {#if outcome.status === 200}
+      <Alert type="success">Your message was sent successfully.</Alert>
+    {/if}
 
-        {#if outcome.status === 400}
-          <Alert type="error">ReCAPTCHA failed. Please try again.</Alert>
-        {/if}
+    {#if outcome.status === 400}
+      <Alert type="error">ReCAPTCHA failed. Please try again.</Alert>
+    {/if}
 
-        {#if outcome.status === 500}
-          <Alert type="error"
-            >There was a problem sending your message, please try again.<br />If the problem perists please email
-            info@jace.info.</Alert
-          >
-        {/if}
+    {#if outcome.status === 500}
+      <Alert type="error"
+        >There was a problem sending your message, please try again.<br />If the problem perists please email
+        info@jace.info.</Alert
+      >
+    {/if}
 
-        <form on:submit|preventDefault={handleSubmit} class="stack medium">
-          <div class="stack small">
-            <label for="name" class="label"> Your name (required) </label>
-            <input id="name" type="text" class="input" required bind:value={name} />
-          </div>
+    <form on:submit|preventDefault={handleSubmit}>
+      <div class="form-field">
+        <label for="name" class="label"> Your name (required) </label>
+        <input id="name" type="text" class="input" required bind:value={name} />
+      </div>
 
-          <div class="stack small">
-            <label for="email" class="label">Your email address (required)</label>
-            <input id="email" type="email" class="input" required bind:value={email} />
-          </div>
+      <div class="form-field">
+        <label for="email" class="label">Your email address (required)</label>
+        <input id="email" type="email" class="input" required bind:value={email} />
+      </div>
 
-          <div class="stack small">
-            <label for="message" class="label">Your message (required)</label>
-            <textarea id="message" class="input" rows={5} required bind:value={message} />
-          </div>
+      <div class="form-field">
+        <label for="message" class="label">Your message (required)</label>
+        <textarea id="message" class="input" rows={8} required bind:value={message} />
+      </div>
 
-          <input class="button submit" type="submit" value="Send your message" />
-        </form>
-      </Card>
-    </div>
+      <input class="button submit" type="submit" value="Send your message" />
+    </form>
   </div>
 </div>
 
 <style type="scss">
-  .inner {
-    padding-bottom: var(--size-extra-large);
-    background: url('../images/vader.png') no-repeat right bottom;
-    display: flex;
-    gap: var(--size-medium);
-    flex-direction: column;
+  .panel {
+    padding: var(--size-extra-large);
   }
 
-  .narrowContainer {
-    padding: 0 var(--size-super);
+  form {
+    display: grid;
+    gap: var(--size-large);
+    max-width: 700px;
+  }
 
-    @media (max-width: 1000px) {
-      padding: 0 var(--size-large);
-    }
+  .form-field {
+    display: grid;
+    gap: var(--size-base);
+  }
 
-    @media (max-width: 767px) {
-      padding: 0;
-    }
+  .h3 {
+    margin-bottom: var(--size-large);
   }
 
   .label {
     display: block;
-    font-weight: var(--font-weight-bold);
   }
 
   .input {
+    border: none;
     width: 100%;
-    padding: var(--size-base);
+    padding: var(--size-medium);
+    background: var(--color-dark-grey);
     border-radius: var(--border-radius-small);
-    border: 1px solid var(--color-nearly-black-20);
-
-    background: var(--color-pale-grey);
+    justify-items: center;
+    color: var(--color-white);
+    box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.05);
   }
 
   .submit {

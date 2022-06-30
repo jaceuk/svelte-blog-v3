@@ -1,7 +1,7 @@
 ---
 title: 'Rebuilding this site'
 date: '2022-05-30'
-excerpt: 'My personal portfolio site was getting a bit long in the tooth so it was time for a change and to learn some new things along the way.'
+intro: 'My personal portfolio site was getting a bit long in the tooth so it was time for a change and to learn some new things along the way.'
 tags: ['React', 'Nextjs', 'Sveltekit']
 ---
 

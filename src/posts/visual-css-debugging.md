@@ -1,7 +1,7 @@
 ---
 title: 'Visual CSS debugging'
 date: '2022-06-25'
-excerpt: 'This quick tip will make debugging CSS in the browser allot easier.'
+intro: 'This quick tip will make debugging CSS in the browser allot easier.'
 tags: ['CSS']
 ---
 
@@ -19,7 +19,7 @@ This will add an opaque background to each element.
 
 ```css
 * {
-  background-color: rgb(255, 0, 0 /0.05) !important;
+  background-color: rgb(255, 0, 0, 0.05) !important;
 }
 ```
 

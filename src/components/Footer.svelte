@@ -1,10 +1,5 @@
-<script lang="ts">
-  import AnimatedFooterBackground from '@components/AnimatedFooterBackground.svelte';
-</script>
-
-<footer>
+<footer class="panel">
   <div class="inner">© 2022 Jason Newington</div>
-  <AnimatedFooterBackground />
 </footer>
 
 <style lang="scss">
@@ -14,17 +9,6 @@
     color: var(--color-white);
     text-align: center;
     padding: var(--size-large) 0;
-  }
-
-  @keyframes Gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    background: var(--color-black);
   }
 </style>

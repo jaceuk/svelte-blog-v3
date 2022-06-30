@@ -48,7 +48,7 @@
 
 <svelte:head>
   <title>{meta.title}</title>
-  <meta name="description" content={meta.excerpt} />
+  <meta name="description" content={meta.intro} />
 </svelte:head>
 
 <div class="inner">

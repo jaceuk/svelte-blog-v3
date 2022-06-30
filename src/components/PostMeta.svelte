@@ -27,3 +27,13 @@
     {/each}
   {/if}
 </div>
+
+<style>
+  .post-meta {
+    font-weight: var(--font-weight-light);
+    color: var(--color-orange);
+  }
+  a {
+    color: var(--color-orange);
+  }
+</style>

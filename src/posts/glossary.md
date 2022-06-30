@@ -1,7 +1,7 @@
 ---
 title: 'Glossary'
 date: '2022-06-23'
-excerpt: 'A handy list of some of those pesky terms that you know how to use but often forget what they mean.'
+intro: 'A handy list of some of those pesky terms that you know how to use but often forget what they mean.'
 tags: ['Misc']
 ---
 

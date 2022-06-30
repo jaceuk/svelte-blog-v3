@@ -10,34 +10,71 @@
   import wakefieldSecurity from '@data/wakefieldSecurity.json';
   import wakefieldSecurityImage from '@images/wakefield.jpg';
   import projects from '@data/projects.json';
-  import Project from '@components/Project.svelte';
+  import Card from '@components/Card.svelte';
 </script>
 
-<div class="container">
-  <div class="inner">
-    <div class="stack">
-      <h2>{projects.title}</h2>
+<div class="panel">
+  <div class="title-container">
+    <div class="title">
+      <h1>{projects.title}</h1>
       {#each projects.text as paragraph}
-        <p>{paragraph}</p>
+        <div class="h3">{paragraph}</div>
       {/each}
     </div>
-    <Project data={dogsToAdopt} image={dogsToAdoptImage} />
-    <Project data={VIPDine} image={VIPDineImage} />
-    <Project data={ESOBuilder} image={ESOBuilderImage} />
-    <Project data={EVOHomeServices} image={EVOHomeServicesImage} />
-    <Project data={wakefieldSecurity} image={wakefieldSecurityImage} />
+  </div>
+
+  <div class="projects">
+    <div>
+      <Card type={dogsToAdopt.type} title={dogsToAdopt.title} intro={dogsToAdopt.intro} imageSRC={dogsToAdoptImage} />
+    </div>
+
+    <div>
+      <Card type={VIPDine.type} title={VIPDine.title} intro={VIPDine.intro} imageSRC={VIPDineImage} />
+    </div>
+
+    <div>
+      <Card type={ESOBuilder.type} title={ESOBuilder.title} intro={ESOBuilder.intro} imageSRC={ESOBuilderImage} />
+    </div>
+
+    <div>
+      <Card
+        type={EVOHomeServices.type}
+        title={EVOHomeServices.title}
+        intro={EVOHomeServices.intro}
+        imageSRC={EVOHomeServicesImage}
+      />
+    </div>
+
+    <div>
+      <Card
+        type={wakefieldSecurity.type}
+        title={wakefieldSecurity.title}
+        intro={wakefieldSecurity.intro}
+        imageSRC={wakefieldSecurityImage}
+      />
+    </div>
   </div>
 </div>
 
 <style lang="scss">
-  .container {
-    padding: var(--size-large) 0;
-    background-color: var(--color-pale-grey);
+  h1 {
+    padding-bottom: var(--size-base);
   }
 
-  .inner {
-    display: flex;
-    gap: var(--size-large);
-    flex-direction: column;
+  .title {
+    border-left: 8px solid var(--color-orange);
+    padding-left: calc(var(--size-extra-large) - 8px);
+  }
+
+  .title-container {
+    margin: var(--size-extra-large) 0 0 0;
+  }
+
+  .projects {
+    margin: var(--size-extra-large);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: var(--size-extra-large);
   }
 </style>

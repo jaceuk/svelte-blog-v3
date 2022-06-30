@@ -27,7 +27,7 @@ export async function get({ url }: IUrl) {
       return {
         title: metadata.title,
         date: metadata.date,
-        excerpt: metadata.excerpt,
+        intro: metadata.intro,
         tags: metadata.tags,
         lowerCaseTags: lowerCaseTags,
         slug: basename(filename, '.md'),

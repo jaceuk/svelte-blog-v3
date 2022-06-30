@@ -32,7 +32,6 @@
     display: flex;
     justify-content: center;
     gap: var(--size-large);
-    padding-bottom: var(--size-medium);
   }
 
   a {
