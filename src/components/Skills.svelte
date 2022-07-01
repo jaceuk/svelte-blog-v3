@@ -4,6 +4,7 @@
   import designer from '@data/designer.json';
   import geek from '@data/geek.json';
   import Callout from '@components/Callout.svelte';
+  import moon from '@images/moon.svg';
 </script>
 
 <div class="panel">
@@ -47,20 +48,32 @@
       {/each}
     </div>
   </div>
+
+  <img class="moon" src={moon} alt="" />
 </div>
 
 <style lang="scss">
+  .moon {
+    filter: grayscale(1);
+    position: absolute;
+    top: -407px;
+    right: -56px;
+  }
+
   .panel {
     padding: var(--size-extra-large);
+    overflow: hidden;
   }
 
   h2 {
     margin-bottom: var(--size-medium);
+    position: relative;
+    z-index: 10;
   }
 
   .tags {
     border-radius: var(--border-radius-medium);
-    box-shadow: inset 0px 0px 0px 4px var(--color-grey);
+    box-shadow: inset 0px 0px 0px var(--size-extra-small) var(--color-grey);
     padding: var(--size-medium);
     display: flex;
     flex-wrap: wrap;
@@ -85,6 +98,8 @@
   }
 
   .container {
+    position: relative;
+    z-index: 10;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);

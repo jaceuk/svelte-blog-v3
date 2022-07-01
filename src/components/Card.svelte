@@ -46,7 +46,7 @@
   .card {
     border-radius: var(--border-radius-medium);
     width: 100%;
-    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.25);
+    box-shadow: var(--card-box-shadow);
     background: var(--color-dark-grey);
     overflow: hidden;
     flex-grow: 1;
@@ -61,8 +61,8 @@
   }
 
   .title {
-    border-left: 4px solid var(--color-orange);
-    padding-left: calc(var(--size-large) - 4px);
+    border-left: var(--size-extra-small) solid var(--color-orange);
+    padding-left: calc(var(--size-large) - var(--size-extra-small));
   }
 
   .type {

@@ -18,7 +18,7 @@
     border-radius: var(--border-radius-medium);
     justify-items: center;
     width: 100%;
-    box-shadow: 0px 0px 16px rgba(255, 255, 255, 0.25);
+    box-shadow: var(--card-box-shadow);
   }
 
   .header {

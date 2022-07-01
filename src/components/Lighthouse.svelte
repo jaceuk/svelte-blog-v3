@@ -38,7 +38,7 @@
 
   .circle {
     border-radius: var(--border-radius-max);
-    padding: 4px;
+    padding: var(--size-extra-small);
     width: 88px;
     height: 88px;
 

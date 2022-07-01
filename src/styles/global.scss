@@ -18,7 +18,8 @@ body {
 .panel {
   background: linear-gradient(135deg, rgba(65, 65, 65, 1) 0%, rgba(0, 0, 0, 1) 100%);
   border-radius: var(--border-radius-medium);
-  box-shadow: inset 0px 0px 0px 4px var(--color-grey);
+  box-shadow: inset 0px 0px 0px var(--size-extra-small) var(--color-grey);
+  position: relative;
 }
 
 .orange-text {
@@ -37,7 +38,7 @@ body {
   font-weight: var(--font-weight-bold);
   border: 1px solid var(--color-nearly-black);
   cursor: pointer;
-  box-shadow: 0px 4px 4px var(--color-nearly-black-20);
+  box-shadow: var(--card-box-shadow);
   transition: var(--transition-fast);
   display: flex;
   align-items: center;

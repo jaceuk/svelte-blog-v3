@@ -164,7 +164,7 @@
     border-radius: var(--border-radius-small);
     justify-items: center;
     color: var(--color-white);
-    box-shadow: inset 0px 0px 0px 2px rgba(255, 255, 255, 0.05);
+    box-shadow: var(--card-box-shadow);
   }
 
   .submit {

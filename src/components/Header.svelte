@@ -6,3 +6,9 @@
   <Navbar />
   <slot />
 </header>
+
+<style>
+  .panel {
+    overflow: hidden;
+  }
+</style>

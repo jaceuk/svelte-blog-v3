@@ -79,7 +79,7 @@
     left: 0;
     bottom: 0;
     width: 93px;
-    height: 4px;
+    height: var(--size-extra-small);
     background: var(--color-orange);
     border-radius: 28px;
     z-index: -1;

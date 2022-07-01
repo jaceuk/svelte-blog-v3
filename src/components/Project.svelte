@@ -220,7 +220,7 @@
         align-items: center;
         justify-content: center;
         background-color: var(--color-white);
-        box-shadow: 0px 4px 4px var(--color-nearly-black-20);
+        box-shadow: 0px var(--size-extra-small) var(--size-extra-small) var(--color-nearly-black-20);
         border: 1px solid var(--color-nearly-black);
         transition: all 0.2s ease-in-out;
       }
