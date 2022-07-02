@@ -17,7 +17,7 @@
   <img class="star" src={star} alt="" />
   <img class="star" src={star} alt="" />
   <img class="star" src={star} alt="" />
-  <img class="star" src={star} alt="" />
+  <img class="star small" src={star} alt="" />
   <img class="star small" src={star} alt="" />
   <img class="star small" src={star} alt="" />
   <img class="star small" src={star} alt="" />
@@ -29,13 +29,13 @@
     0% {
       opacity: 1;
     }
-    25% {
+    45% {
       opacity: 0.6;
     }
     50% {
-      opacity: 0;
+      opacity: 0.2;
     }
-    75% {
+    55% {
       opacity: 0.6;
     }
     100% {
@@ -49,7 +49,7 @@
     right: 70px;
     z-index: 1;
     width: 10px;
-    animation: twinkle 4s ease-in-out infinite;
+    animation: twinkle 3s ease-in-out infinite;
 
     &.small {
       width: 5px;
@@ -59,14 +59,14 @@
       bottom: 560px;
       right: 150px;
       animation-delay: 2s;
-      animation-duration: 6s;
+      animation-duration: 4s;
     }
 
     &:nth-child(3) {
       bottom: 520px;
       right: 350px;
       animation-delay: 4s;
-      animation-duration: 4s;
+      animation-duration: 3s;
     }
 
     &:nth-child(4) {
@@ -80,28 +80,28 @@
       bottom: 480px;
       right: 200px;
       animation-delay: 3s;
-      animation-duration: 3s;
+      animation-duration: 4s;
     }
 
     &:nth-child(6) {
       bottom: 590px;
       right: 460px;
-      animation-delay: 4s;
-      animation-duration: 4s;
+      animation-delay: 2s;
+      animation-duration: 3s;
     }
 
     &:nth-child(7) {
       bottom: 460px;
       right: 530px;
       animation-delay: 2s;
-      animation-duration: 2s;
+      animation-duration: 5s;
     }
 
     &:nth-child(8) {
       bottom: 290px;
       right: 520px;
       animation-delay: 1s;
-      animation-duration: 8s;
+      animation-duration: 3s;
     }
   }
 
