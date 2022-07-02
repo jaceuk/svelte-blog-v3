@@ -1,5 +1,7 @@
 <script lang="ts">
   import PostMeta from '@components/PostMeta.svelte';
+  import ArrowRight from '@components/svgs/ArrowRight.svelte';
+  import Button from '@components/Button.svelte';
 
   export let imageSRC: string = '';
   export let date: string = '';
@@ -7,6 +9,10 @@
   export let type: string = '';
   export let title: string;
   export let intro: string;
+
+  function handleClick() {
+    alert('clicked');
+  }
 </script>
 
 <div class="container">
@@ -31,6 +37,8 @@
       </div>
 
       <div class="text">{intro}</div>
+
+      <Button text="Read more" {handleClick}><ArrowRight /></Button>
     </div>
   </div>
 </div>
@@ -57,7 +65,14 @@
   }
 
   .text-container {
-    padding-top: var(--size-large);
+    padding: var(--size-large) 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .title-container {
+    width: 100%;
   }
 
   .title {

@@ -16,9 +16,8 @@
     <h1 class="large">Jason Newington</h1>
     <div class="h3">Creating out of this world websites!</div>
   </div>
+  <Button text="Featured projects" {handleClick}><ArrowDown /></Button>
 </div>
-
-<Button text="Featured projects" {handleClick}><ArrowDown /></Button>
 
 <div>
   <img class="moon" src={moon} alt="" />
@@ -126,10 +125,14 @@
   }
 
   .title-container {
-    margin: var(--size-max) 0;
+    margin: var(--size-max) 0 var(--size-extra-large) 0;
     max-width: 650px;
     position: relative;
     z-index: 20;
+    display: flex;
+    gap: var(--size-large);
+    align-items: center;
+    flex-direction: column;
   }
 
   .moon {
