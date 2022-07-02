@@ -11,6 +11,7 @@
   import wakefieldSecurityImage from '@images/wakefield.jpg';
   import projects from '@data/projects.json';
   import Card from '@components/Card.svelte';
+  import moon from '@images/moon.svg';
 </script>
 
 <div class="panel">
@@ -54,9 +55,15 @@
       />
     </div>
   </div>
+
+  <img class="moon" src={moon} alt="" />
 </div>
 
 <style lang="scss">
+  .moon {
+    top: 96px;
+  }
+
   h1 {
     padding-bottom: var(--size-base);
   }
@@ -68,6 +75,8 @@
 
   .title-container {
     margin: var(--size-extra-large) 0 0 0;
+    z-index: 20;
+    position: relative;
   }
 
   .projects {
@@ -76,5 +85,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap: var(--size-extra-large);
+    z-index: 20;
+    position: relative;
   }
 </style>

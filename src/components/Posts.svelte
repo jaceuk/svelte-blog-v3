@@ -1,6 +1,7 @@
 <script lang="ts">
   import Pagination from '@components/Pagination.svelte';
   import Card from '@components/Card.svelte';
+  import PagePanel from '@components/PagePanel.svelte';
 
   export let posts: any;
   export let page: number;
@@ -8,20 +9,19 @@
   export let tag: string = '';
 </script>
 
-<div class="panel">
+<PagePanel>
+  {#if tag}
+    <div class="h3">Posts tagged with '{tag}'.</div>
+  {/if}
   <div class="grid">
     {#each posts as post}
       <Card title={post.title} intro={post.intro} date={post.date} tags={post.tags} />
     {/each}
   </div>
   <Pagination {page} {postCount} {tag} />
-</div>
+</PagePanel>
 
 <style type="scss">
-  .panel {
-    padding: var(--size-extra-large);
-  }
-
   .grid {
     display: grid;
     grid-auto-flow: row;
@@ -33,5 +33,9 @@
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
     }
+  }
+
+  .h3 {
+    margin-bottom: var(--size-large);
   }
 </style>

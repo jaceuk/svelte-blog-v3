@@ -10,18 +10,17 @@
   import Footer from '@components/Footer.svelte';
   import Header from '@components/Header.svelte';
   import HomeTitle from '@components/HomeTitle.svelte';
-  import ContactTitle from '@components/ContactTitle.svelte';
-  import BlogTitle from '@components/BlogTitle.svelte';
   import TagTitle from '@components/TagTitle.svelte';
+  import PageTitle from '@components/PageTitle.svelte';
 </script>
 
 <div class="wrapper">
   <CookieBanner />
   <Header>
     {#if $page.url.pathname === '/'}<HomeTitle slot="title" />{/if}
-    {#if $page.url.pathname === '/contact'}<ContactTitle slot="title" />{/if}
-    {#if $page.url.pathname === '/blog/posts'}<BlogTitle slot="title" />{/if}
-    {#if $page.url.pathname.includes('/tag/')}<TagTitle slot="title" />{/if}
+    {#if $page.url.pathname === '/contact'}<PageTitle>Let's talk</PageTitle>{/if}
+    {#if $page.url.pathname === '/blog/posts' || $page.url.pathname.includes('/tag/')}<PageTitle>Blog posts</PageTitle
+      >{/if}
   </Header>
   <slot />
   <Footer />

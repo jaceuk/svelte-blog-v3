@@ -20,6 +20,21 @@ body {
   border-radius: var(--border-radius-medium);
   box-shadow: inset 0px 0px 0px var(--size-extra-small) var(--color-grey);
   position: relative;
+  overflow: hidden;
+}
+
+.content {
+  z-index: 20;
+  position: relative;
+}
+
+.moon {
+  filter: grayscale(1);
+  position: absolute;
+  z-index: 10;
+  width: 520px;
+  min-width: 520px;
+  right: -56px;
 }
 
 .orange-text {

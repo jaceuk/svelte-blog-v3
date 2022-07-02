@@ -118,14 +118,11 @@
     margin: var(--size-max) 0;
     max-width: 650px;
     position: relative;
-    z-index: 10;
+    z-index: 20;
   }
 
   .moon {
-    filter: grayscale(1);
-    position: absolute;
     bottom: -136px;
-    right: -56px;
     z-index: 10;
   }
 
@@ -134,6 +131,6 @@
     position: absolute;
     bottom: 350px;
     right: 156px;
-    z-index: 20;
+    z-index: 10;
   }
 </style>

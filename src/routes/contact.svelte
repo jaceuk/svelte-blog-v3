@@ -1,8 +1,8 @@
 <script type="ts">
-  import Card from '@components/Card.svelte';
   import Overlay from '@components/Overlay.svelte';
   import Loader from '@components/Loader.svelte';
   import Alert from '@components/Alert.svelte';
+  import PagePanel from '@components/PagePanel.svelte';
   interface IOutcome {
     status: number;
     message: string;
@@ -88,7 +88,7 @@
     defer></script>
 </svelte:head>
 
-<div class="panel">
+<PagePanel>
   <div class="h3">Please get in touch to talk about, well, anything really.</div>
 
   <div>
@@ -130,7 +130,7 @@
       <input class="button submit" type="submit" value="Send your message" />
     </form>
   </div>
-</div>
+</PagePanel>
 
 <style type="scss">
   .panel {
