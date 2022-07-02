@@ -1,7 +1,14 @@
 <script>
+  import Button from '@components/Button.svelte';
+  import ArrowDown from '@components/svgs/ArrowDown.svelte';
   import moon from '@images/moon.svg';
   import rocket from '@images/rocket.svg';
   import star from '@images/star.svg';
+
+  function handleClick() {
+    var element = document.querySelector('#featured-projects');
+    element?.scrollIntoView();
+  }
 </script>
 
 <div class="title-container">
@@ -11,17 +18,21 @@
   </div>
 </div>
 
+<Button text="Featured projects" {handleClick}><ArrowDown /></Button>
+
 <div>
   <img class="moon" src={moon} alt="" />
   <img class="rocket" src={rocket} alt="" />
-  <img class="star" src={star} alt="" />
-  <img class="star" src={star} alt="" />
-  <img class="star" src={star} alt="" />
-  <img class="star small" src={star} alt="" />
-  <img class="star small" src={star} alt="" />
-  <img class="star small" src={star} alt="" />
-  <img class="star small" src={star} alt="" />
-  <img class="star small" src={star} alt="" />
+  <div>
+    <img class="star" src={star} alt="" />
+    <img class="star" src={star} alt="" />
+    <img class="star" src={star} alt="" />
+    <img class="star" src={star} alt="" />
+    <img class="star small" src={star} alt="" />
+    <img class="star small" src={star} alt="" />
+    <img class="star small" src={star} alt="" />
+    <img class="star small" src={star} alt="" />
+  </div>
 </div>
 
 <style lang="scss">

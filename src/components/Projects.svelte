@@ -14,7 +14,7 @@
   import moon from '@images/moon.svg';
 </script>
 
-<div class="panel">
+<div class="panel" id="featured-projects">
   <div class="title-container">
     <div class="title">
       <h1>{projects.title}</h1>
