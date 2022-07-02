@@ -1,12 +1,13 @@
 <script lang="ts">
   export let text: string;
   export let handleClick: () => void;
+  export let type: string;
 </script>
 
-<button on:click={handleClick}>{text}<slot /></button>
+<button class="button" on:click={handleClick}>{text}<slot /></button>
 
 <style lang="scss">
-  button {
+  .button {
     background: var(--color-white);
     color: var(--color-nearly-black);
     border-radius: var(--border-radius-super);

@@ -58,11 +58,11 @@
     bottom: 440px;
     right: 70px;
     z-index: 1;
-    width: 10px;
+    width: 20px;
     animation: twinkle 3s ease-in-out infinite;
 
     &.small {
-      width: 5px;
+      width: 10px;
     }
 
     &:nth-child(2) {
