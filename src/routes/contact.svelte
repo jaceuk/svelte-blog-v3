@@ -3,6 +3,8 @@
   import Loader from '@components/Loader.svelte';
   import Alert from '@components/Alert.svelte';
   import PagePanel from '@components/PagePanel.svelte';
+  import Button from '@components/Button.svelte';
+  import Header from '@components/Header.svelte';
   interface IOutcome {
     status: number;
     message: string;
@@ -88,6 +90,8 @@
     defer></script>
 </svelte:head>
 
+<Header>Let's talk</Header>
+
 <PagePanel>
   <div class="h3">Please get in touch to talk about, well, anything really.</div>
 
@@ -127,20 +131,18 @@
         <textarea id="message" class="input" rows={8} required bind:value={message} />
       </div>
 
-      <input class="button submit" type="submit" value="Send your message" />
+      <div class="submit">
+        <Button text="Send your message" />
+      </div>
     </form>
   </div>
 </PagePanel>
 
 <style type="scss">
-  .panel {
-    padding: var(--size-extra-large);
-  }
-
   form {
     display: grid;
     gap: var(--size-large);
-    max-width: 700px;
+    max-width: 750px;
   }
 
   .form-field {

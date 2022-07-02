@@ -10,7 +10,7 @@
   import wakefieldSecurity from '@data/wakefieldSecurity.json';
   import wakefieldSecurityImage from '@images/wakefield.jpg';
   import projects from '@data/projects.json';
-  import Card from '@components/Card.svelte';
+  import ProjectCard from '@components/ProjectCard.svelte';
   import moon from '@images/moon.svg';
 </script>
 
@@ -26,19 +26,29 @@
 
   <div class="projects">
     <div>
-      <Card type={dogsToAdopt.type} title={dogsToAdopt.title} intro={dogsToAdopt.intro} imageSRC={dogsToAdoptImage} />
+      <ProjectCard
+        type={dogsToAdopt.type}
+        title={dogsToAdopt.title}
+        intro={dogsToAdopt.intro}
+        imageSRC={dogsToAdoptImage}
+      />
     </div>
 
     <div>
-      <Card type={VIPDine.type} title={VIPDine.title} intro={VIPDine.intro} imageSRC={VIPDineImage} />
+      <ProjectCard type={VIPDine.type} title={VIPDine.title} intro={VIPDine.intro} imageSRC={VIPDineImage} />
     </div>
 
     <div>
-      <Card type={ESOBuilder.type} title={ESOBuilder.title} intro={ESOBuilder.intro} imageSRC={ESOBuilderImage} />
+      <ProjectCard
+        type={ESOBuilder.type}
+        title={ESOBuilder.title}
+        intro={ESOBuilder.intro}
+        imageSRC={ESOBuilderImage}
+      />
     </div>
 
     <div>
-      <Card
+      <ProjectCard
         type={EVOHomeServices.type}
         title={EVOHomeServices.title}
         intro={EVOHomeServices.intro}
@@ -47,7 +57,7 @@
     </div>
 
     <div>
-      <Card
+      <ProjectCard
         type={wakefieldSecurity.type}
         title={wakefieldSecurity.title}
         intro={wakefieldSecurity.intro}

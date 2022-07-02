@@ -1,7 +1,7 @@
 <script lang="ts">
   import PostMeta from '@components/PostMeta.svelte';
   import ArrowRight from '@components/svgs/ArrowRight.svelte';
-  import Button from '@components/Button.svelte';
+  import Link from '@components/Link.svelte';
 
   export let imageSRC: string = '';
   export let date: string = '';
@@ -9,10 +9,7 @@
   export let type: string = '';
   export let title: string;
   export let intro: string;
-
-  function handleClick() {
-    alert('clicked');
-  }
+  export let slug: string;
 </script>
 
 <div class="container">
@@ -38,7 +35,7 @@
 
       <div class="text">{intro}</div>
 
-      <Button text="Read more" {handleClick}><ArrowRight /></Button>
+      <Link text="Read more" href={`/blog/${slug}`}><ArrowRight /></Link>
     </div>
   </div>
 </div>
@@ -69,6 +66,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 100%;
   }
 
   .title-container {

@@ -40,8 +40,9 @@
 </script>
 
 <script lang="ts">
-  import Card from '@components/Card.svelte';
   import PostMeta from '@components/PostMeta.svelte';
+  import PagePanel from '@components/PagePanel.svelte';
+  import Header from '@components/Header.svelte';
 
   export let page: any, meta: any;
 </script>
@@ -51,48 +52,24 @@
   <meta name="description" content={meta.intro} />
 </svelte:head>
 
-<div class="inner">
-  <div class="narrowContainer">
-    <div class="row">
-      <Card>
-        <div class="card-inner">
-          <h1>{meta.title}</h1>
-          <PostMeta date={meta.date} tags={meta.tags} />
-          <svelte:component this={page} />
-        </div>
-      </Card>
-    </div>
+<Header>{meta.title}</Header>
+
+<PagePanel>
+  <div class="post-content">
+    <PostMeta date={meta.date} tags={meta.tags} />
+    <svelte:component this={page} />
   </div>
-</div>
+</PagePanel>
 
 <style type="scss">
-  .inner {
-    margin-top: calc(var(--size-extra-large) * -2);
-    padding-bottom: var(--size-extra-large);
-    background: url('../../images/vader.png') no-repeat right bottom;
+  .panel {
+    padding: var(--size-extra-large);
   }
 
-  .card-inner {
-    padding: var(--size-medium);
+  .post-content {
     display: flex;
     gap: var(--size-medium);
     flex-direction: column;
-
-    @media (max-width: 900px) {
-      padding: 0;
-      gap: var(--size-base);
-    }
-  }
-
-  .narrowContainer {
-    padding: 0 var(--size-extra-large);
-
-    @media (max-width: 1000px) {
-      padding: 0 var(--size-large);
-    }
-
-    @media (max-width: 767px) {
-      padding: 0;
-    }
+    max-width: 750px;
   }
 </style>

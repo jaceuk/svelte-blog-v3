@@ -15,7 +15,7 @@
 </script>
 
 <script lang="ts">
-  import Card from '@components/Card.svelte';
+  import PostCard from '@components/PostCard.svelte';
   import stormTroopers from '@images/404.jpg';
 
   export let status: number;
@@ -23,7 +23,7 @@
 
 <div class="inner">
   <div class="narrowContainer">
-    <Card>
+    <PostCard>
       {#if status == 404}
         <h1>Error 404</h1>
         <h2>This is not the page you're looking for.</h2>
@@ -34,7 +34,7 @@
         <p>There has been a problem on our side, please try again.</p>
         <img class="image" src={stormTroopers} alt="" />
       {/if}
-    </Card>
+    </PostCard>
   </div>
 </div>
 

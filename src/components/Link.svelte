@@ -1,12 +1,12 @@
 <script lang="ts">
   export let text: string;
-  export let handleClick = () => {};
+  export let href: string;
 </script>
 
-<button on:click={handleClick}>{text}<slot /></button>
+<a {href}>{text}<slot /></a>
 
 <style lang="scss">
-  button {
+  a {
     background: var(--color-white);
     color: var(--color-nearly-black);
     border-radius: var(--border-radius-super);
@@ -23,6 +23,7 @@
     width: fit-content;
     display: flex;
     align-items: center;
+    margin-top: auto;
 
     &:hover {
       background: var(--color-black);

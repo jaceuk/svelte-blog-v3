@@ -20,8 +20,10 @@
 
 <style lang="scss">
   .container {
-    margin: var(--size-medium);
+    padding: var(--size-medium);
     z-index: 50;
+    position: absolute;
+    width: 100%;
   }
 
   .inner {
