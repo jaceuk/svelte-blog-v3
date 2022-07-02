@@ -15,6 +15,6 @@
   }
 
   .moon {
-    top: -152px;
+    top: -192px;
   }
 </style>

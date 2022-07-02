@@ -36,7 +36,7 @@
   .moon {
     filter: grayscale(1);
     position: absolute;
-    bottom: -391px;
+    bottom: -351px;
     right: -56px;
     z-index: 10;
   }
