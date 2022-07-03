@@ -46,6 +46,7 @@
   export let data: any;
 
   const title = data.title;
+  const type = data.type;
   const overview = data.text;
   const slug = data.slug;
   const notes = data.notes;
@@ -53,12 +54,14 @@
   const lighthouseScores = data.lighthouseScores;
 </script>
 
+<!-- TODO: rework layout -->
+
 <svelte:head>
   <title>{title}</title>
   <meta name="description" content="xxxx" />
 </svelte:head>
 
-<PageHeader>{title}</PageHeader>
+<PageHeader {type}>{title}</PageHeader>
 
 <PagePanel>
   <div class="container">
@@ -85,13 +88,14 @@
 <style lang="scss">
   .container {
     display: grid;
+    align-items: start;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
     gap: var(--size-extra-large);
     grid-template-areas:
       'overview screenshot'
-      'features tags'
-      'features lighthouse';
+      'lighthouse lighthouse'
+      'features tags';
 
     .overview {
       grid-area: overview;

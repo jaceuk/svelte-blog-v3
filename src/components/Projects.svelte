@@ -10,7 +10,7 @@
   import wakefieldSecurityData from '@data/projects/wakefieldSecurity.json';
   import wakefieldSecurityImage from '@images/wakefield-security.jpg';
   import projects from '@data/projects.json';
-  import ProjectCard from '@components/ProjectCard.svelte';
+  import Card from '@components/Card.svelte';
   import moon from '@images/moon.svg';
 </script>
 
@@ -26,23 +26,53 @@
 
   <div class="projects">
     <div>
-      <ProjectCard data={dogsToAdoptData} imageSRC={dogsToAdoptImage} />
+      <Card
+        title={dogsToAdoptData.title}
+        type={dogsToAdoptData.type}
+        intro={dogsToAdoptData.intro}
+        slug={dogsToAdoptData.slug}
+        imageSRC={dogsToAdoptImage}
+      />
     </div>
 
     <div>
-      <ProjectCard data={VIPDineData} imageSRC={VIPDineImage} />
+      <Card
+        title={VIPDineData.title}
+        type={VIPDineData.type}
+        intro={VIPDineData.intro}
+        slug={VIPDineData.slug}
+        imageSRC={VIPDineImage}
+      />
     </div>
 
     <div>
-      <ProjectCard data={ESOBuilderData} imageSRC={ESOBuilderImage} />
+      <Card
+        title={ESOBuilderData.title}
+        type={ESOBuilderData.type}
+        intro={ESOBuilderData.intro}
+        slug={ESOBuilderData.slug}
+        imageSRC={ESOBuilderImage}
+      />
     </div>
 
     <div>
-      <ProjectCard data={EVOHomeServicesData} imageSRC={EVOHomeServicesImage} />
+      <Card
+        title={EVOHomeServicesData.title}
+        type={EVOHomeServicesData.type}
+        intro={EVOHomeServicesData.intro}
+        slug={EVOHomeServicesData.slug}
+        imageSRC={EVOHomeServicesImage}
+      />
     </div>
 
     <div>
-      <ProjectCard data={wakefieldSecurityData} imageSRC={wakefieldSecurityImage} />
+      <Card
+        title={wakefieldSecurityData.title}
+        type={wakefieldSecurityData.type}
+        intro={wakefieldSecurityData.intro}
+        slug={wakefieldSecurityData.slug}
+        imageSRC={wakefieldSecurityImage}
+      />
     </div>
   </div>
 

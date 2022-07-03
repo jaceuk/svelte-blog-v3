@@ -1,20 +1,23 @@
 <script lang="ts">
   import ArrowRight from '@components/svgs/ArrowRight.svelte';
   import Link from '@components/Link.svelte';
+  import PostMeta from '@components/PostMeta.svelte';
 
-  export let data: any;
-  export let imageSRC: string;
-
-  const type = data.type;
-  const title = data.title;
-  const intro = data.intro;
-  const slug = data.slug;
+  export let date = '';
+  export let tags: [] = [];
+  export let title: string;
+  export let intro: string;
+  export let slug: string;
+  export let type = '';
+  export let imageSRC = '';
 </script>
 
 <div class="container">
-  <div class="image-container">
-    <img src={imageSRC} alt="" />
-  </div>
+  {#if imageSRC}
+    <div class="image-container">
+      <img src={imageSRC} alt="" />
+    </div>
+  {/if}
 
   <div class="card">
     <div class="text-block">
@@ -27,10 +30,14 @@
         </div>
       </div>
 
-      <div class="text">{intro}</div>
+      <div class="text">
+        {#if date}
+          <PostMeta {date} {tags} />
+        {/if}{intro}
+      </div>
 
       <div class="link">
-        <Link text="Read more" href={`/projects/${slug}`}><ArrowRight /></Link>
+        <Link text="Read more" href={`/${type ? 'projects' : 'blog'}/${slug}`}><ArrowRight /></Link>
       </div>
     </div>
   </div>
@@ -96,5 +103,8 @@
 
   .text {
     padding: 0 var(--size-large) var(--size-medium) var(--size-large);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-medium);
   }
 </style>

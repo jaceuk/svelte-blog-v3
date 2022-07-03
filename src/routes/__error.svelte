@@ -33,10 +33,8 @@
   <div class="container">
     {#if status === 404}
       <h2>This is not the page you're looking for.</h2>
-      <p>Please use the navigation above to return to the homepage.</p>
     {:else}
       <h2>There has been a disturbance in the force.</h2>
-      <p>This is usually a problem on our side, please try again.</p>
     {/if}
   </div>
 </PagePanel>

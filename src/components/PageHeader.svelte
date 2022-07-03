@@ -1,11 +1,20 @@
 <script lang="ts">
   import moon from '@images/moon.svg';
+
+  export let type = '';
+  export let subtitle = '';
 </script>
 
 <header class="panel">
   <div class="title-container">
     <div class="title">
+      {#if type}
+        <div class="h3 type">{type}</div>
+      {/if}
       <h1><slot /></h1>
+      {#if subtitle}
+        <div class="h3">{subtitle}</div>
+      {/if}
     </div>
   </div>
 
@@ -13,6 +22,10 @@
 </header>
 
 <style>
+  .type {
+    text-transform: uppercase;
+  }
+
   .panel {
     padding-top: 129px;
   }

@@ -1,6 +1,6 @@
 <script lang="ts">
   import Pagination from '@components/Pagination.svelte';
-  import PostCard from '@components/PostCard.svelte';
+  import Card from '@components/Card.svelte';
   import PagePanel from '@components/PagePanel.svelte';
 
   export let posts: any;
@@ -15,7 +15,7 @@
   {/if}
   <div class="grid">
     {#each posts as post}
-      <PostCard title={post.title} intro={post.intro} date={post.date} tags={post.tags} slug={post.slug} />
+      <Card title={post.title} intro={post.intro} date={post.date} tags={post.tags} slug={post.slug} />
     {/each}
   </div>
   <Pagination {page} {postCount} {tag} />

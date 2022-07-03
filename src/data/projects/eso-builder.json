@@ -5,7 +5,7 @@
   "type": "Web app",
   "skills": {
     "primary": ["HTML", "React", "CSS/Sass", "JavaScript"],
-    "secondary": ["HTML", "React", "CSS/Sass", "JavaScript"]
+    "secondary": ["MySQL", "PHP", "REST API", "Slim", "UX/UI"]
   },
   "text": [
     "This web app allows players to plan out their in game characters without being in the game itself.",
