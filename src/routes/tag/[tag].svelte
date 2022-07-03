@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   import { tag } from '@lib/stores';
-  import Header from '@components/Header.svelte';
+  import PageHeader from '@components/PageHeader.svelte';
   interface IParam {
     tag: string;
   }
@@ -42,6 +42,6 @@
   <title>Blog</title>
 </svelte:head>
 
-<Header>Blog posts</Header>
+<PageHeader>Blog posts</PageHeader>
 
 <Posts {posts} {page} tag={tagParam} {postCount} />

@@ -36,7 +36,7 @@
 </script>
 
 <script lang="ts">
-  import Header from '@components/Header.svelte';
+  import PageHeader from '@components/PageHeader.svelte';
   import PagePanel from '@components/PagePanel.svelte';
   import Tags from '@components/Tags.svelte';
   import Lighthouse from '@components/Lighthouse.svelte';
@@ -56,7 +56,7 @@
   <meta name="description" content="xxxx" />
 </svelte:head>
 
-<Header>{title}</Header>
+<PageHeader>{title}</PageHeader>
 
 <PagePanel>
   <div class="container">

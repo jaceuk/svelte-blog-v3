@@ -15,48 +15,37 @@
 </script>
 
 <script lang="ts">
-  import PostCard from '@components/PostCard.svelte';
-  import stormTroopers from '@images/404.jpg';
+  import PagePanel from '@components/PagePanel.svelte';
+  import PageHeader from '@components/PageHeader.svelte';
 
   export let status: number;
 </script>
 
-<div class="inner">
-  <div class="narrowContainer">
-    <PostCard>
-      {#if status == 404}
-        <h1>Error 404</h1>
-        <h2>This is not the page you're looking for.</h2>
-        <img class="image" src={stormTroopers} alt="" />
-      {:else}
-        <h1>Error 500</h1>
-        <h2>This is not the error you're looking for.</h2>
-        <p>There has been a problem on our side, please try again.</p>
-        <img class="image" src={stormTroopers} alt="" />
-      {/if}
-    </PostCard>
+<PageHeader>
+  {#if status == 404}
+    Error 404
+  {:else}
+    Error 500
+  {/if}
+</PageHeader>
+
+<PagePanel>
+  <div class="container">
+    {#if status === 404}
+      <h2>This is not the page you're looking for.</h2>
+      <p>Please use the navigation above to return to the homepage.</p>
+    {:else}
+      <h2>There has been a disturbance in the force.</h2>
+      <p>This is usually a problem on our side, please try again.</p>
+    {/if}
   </div>
-</div>
+</PagePanel>
 
 <style lang="scss">
-  .inner {
-    margin-top: calc(var(--size-extra-large) * -2);
-    margin-bottom: calc(var(--size-medium) * -1);
-  }
-
-  .narrowContainer {
-    padding: 0 var(--size-super);
-
-    @media (max-width: 1000px) {
-      padding: 0 var(--size-large);
-    }
-
-    @media (max-width: 767px) {
-      padding: 0;
-    }
-  }
-
-  .image {
-    margin-bottom: calc(var(--size-medium) * -1);
+  .container {
+    max-width: 800px;
+    display: flex;
+    gap: var(--size-large);
+    flex-direction: column;
   }
 </style>

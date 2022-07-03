@@ -5,7 +5,6 @@
 <header class="panel">
   <div class="title-container">
     <div class="title">
-      <div class="h3"><slot name="type" /></div>
       <h1><slot /></h1>
     </div>
   </div>
@@ -14,6 +13,10 @@
 </header>
 
 <style>
+  .panel {
+    padding-top: 129px;
+  }
+
   h1 {
     padding-bottom: var(--size-base);
   }
@@ -23,12 +26,8 @@
     padding-left: calc(var(--size-extra-large) - 8px);
   }
 
-  .h3 {
-    text-transform: uppercase;
-  }
-
   .title-container {
-    margin: var(--size-large) 0;
+    margin: var(--size-medium) 0 var(--size-large) 0;
     max-width: 1000px;
     z-index: 20;
     position: relative;

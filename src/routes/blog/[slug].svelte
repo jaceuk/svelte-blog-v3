@@ -30,6 +30,8 @@
       return post.slug.toLowerCase() === slug.toLowerCase();
     });
 
+    if (!filteredPost) return { status: 404 };
+
     return {
       props: {
         meta: filteredPost.post.metadata,
@@ -42,7 +44,7 @@
 <script lang="ts">
   import PostMeta from '@components/PostMeta.svelte';
   import PagePanel from '@components/PagePanel.svelte';
-  import Header from '@components/Header.svelte';
+  import PageHeader from '@components/PageHeader.svelte';
 
   export let page: any, meta: any;
 </script>
@@ -52,7 +54,7 @@
   <meta name="description" content={meta.intro} />
 </svelte:head>
 
-<Header>{meta.title}</Header>
+<PageHeader>{meta.title}</PageHeader>
 
 <PagePanel>
   <div class="post-content">

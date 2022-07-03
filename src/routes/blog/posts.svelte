@@ -22,7 +22,7 @@
 
 <script lang="ts">
   import Posts from '@components/Posts.svelte';
-  import Header from '@components/Header.svelte';
+  import PageHeader from '@components/PageHeader.svelte';
 
   export let posts: any;
   export let page: number;
@@ -33,6 +33,6 @@
   <title>Blog</title>
 </svelte:head>
 
-<Header>Blog posts</Header>
+<PageHeader>Blog posts</PageHeader>
 
 <Posts {posts} {page} {postCount} />

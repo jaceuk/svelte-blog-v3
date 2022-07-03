@@ -4,7 +4,7 @@
   import Alert from '@components/Alert.svelte';
   import PagePanel from '@components/PagePanel.svelte';
   import Button from '@components/Button.svelte';
-  import Header from '@components/Header.svelte';
+  import PageHeader from '@components/PageHeader.svelte';
   interface IOutcome {
     status: number;
     message: string;
@@ -90,7 +90,7 @@
     defer></script>
 </svelte:head>
 
-<Header>Let's talk</Header>
+<PageHeader>Let's talk</PageHeader>
 
 {#if processing}
   <Overlay><Loader>Sending your message</Loader></Overlay>
