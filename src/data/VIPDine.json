@@ -1,6 +1,7 @@
 {
   "title": "VIP Dine",
   "image": "vip-dine.jpg",
+  "slug": "vip-dine",
   "intro": "A brochureware website for a company that offers a low cost way for restaurants to take table reservations and food orders online.",
   "type": "Website",
   "skills": {

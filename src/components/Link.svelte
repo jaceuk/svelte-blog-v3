@@ -1,9 +1,11 @@
 <script lang="ts">
-  export let text: string;
+  export let text = '';
   export let href: string;
+  export let disabled = false;
+  export let label = '';
 </script>
 
-<a {href}>{text}<slot /></a>
+<a {href} aria-disabled={disabled} aria-label={label}>{text}<slot /></a>
 
 <style lang="scss">
   a {
@@ -28,6 +30,17 @@
     &:hover {
       background: var(--color-black);
       color: var(--color-white);
+    }
+
+    &[aria-disabled='true'] {
+      cursor: default;
+      opacity: 0.2;
+      pointer-events: none;
+
+      &:hover {
+        background-color: var(--color-white);
+        color: var(--color-nearly-black);
+      }
     }
   }
 </style>

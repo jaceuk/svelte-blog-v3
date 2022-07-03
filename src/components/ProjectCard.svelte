@@ -1,6 +1,6 @@
 <script lang="ts">
-  import NewWindow from '@components/svgs/NewWindow.svelte';
-  import Button from '@components/Button.svelte';
+  import ArrowRight from '@components/svgs/ArrowRight.svelte';
+  import Link from '@components/Link.svelte';
   import Modal from '@components/Modal.svelte';
   import Tags from '@components/Tags.svelte';
   import PagePanel from '@components/PagePanel.svelte';
@@ -9,6 +9,7 @@
 
   export let data: any;
   export let imageSRC: string;
+  export let screenshotSRC: string;
 
   const skills = data.skills;
   const type = data.type;
@@ -17,6 +18,7 @@
   const text = data.text;
   const lighthouseScores = data.lighthouseScores;
   const notes = data.notes;
+  const slug = data.slug;
 
   let showModal = false;
 
@@ -27,11 +29,9 @@
 </script>
 
 <div class="container">
-  {#if imageSRC}
-    <div class="image-container">
-      <img src={imageSRC} alt="" />
-    </div>
-  {/if}
+  <div class="image-container">
+    <img src={imageSRC} alt="" />
+  </div>
 
   <div class="card">
     <div class="text-block">
@@ -46,7 +46,9 @@
 
       <div class="text">{intro}</div>
 
-      <div class="button"><Button text="Read more" handleClick={handleToggleModal}><NewWindow /></Button></div>
+      <div class="link">
+        <Link text="Read more" href={`/projects/${slug}`}><ArrowRight /></Link>
+      </div>
     </div>
   </div>
 </div>
@@ -60,7 +62,7 @@
           <h2>Overview</h2>
           {#each text as paragraph}<p>{paragraph}</p>{/each}
         </div>
-        <div class="screenshot">screenshot</div>
+        <div class="screenshot"><img src={screenshotSRC} alt="" /></div>
         <div class="features text-block">
           <h2>Notes</h2>
           {#each notes as note}<p>{note}</p>{/each}
@@ -77,7 +79,7 @@
 {/if}
 
 <style lang="scss">
-  .button {
+  .link {
     margin: auto auto 0 auto;
   }
 
@@ -138,6 +140,10 @@
     padding: var(--size-large) 0;
   }
 
+  .modal-content .text-block {
+    padding: 0;
+  }
+
   .title-container {
     width: 100%;
   }
@@ -165,6 +171,16 @@
     aspect-ratio: 16/9;
     object-fit: cover;
     object-position: center top;
+  }
+
+  .screenshot {
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--card-box-shadow);
+  }
+
+  .screenshot img {
+    aspect-ratio: 0;
   }
 
   .text {

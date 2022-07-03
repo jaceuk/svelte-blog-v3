@@ -1,5 +1,8 @@
 <script lang="ts">
+  import { browser } from '$app/env';
   import moon from '@images/moon.svg';
+
+  browser && document.body.classList.remove('modal-open');
 </script>
 
 <header class="panel">

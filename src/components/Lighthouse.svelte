@@ -6,7 +6,7 @@
 
 <div class="container">
   {#each lighthouseScores as score, index}
-    <div class="stack justify-center">
+    <div class="score">
       <div
         class="circle {parseInt(score) < 90 ? 'average' : 'good'}"
         style="background-image: conic-gradient(var(--color-{parseInt(score) < 90
@@ -36,6 +36,13 @@
     }
   }
 
+  .score {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-base);
+    align-items: center;
+  }
+
   .circle {
     border-radius: var(--border-radius-max);
     padding: var(--size-extra-small);
@@ -57,20 +64,20 @@
     }
 
     &[class~='good'] {
-      background-color: var(--color-good-pale);
+      background-color: var(--color-black);
 
       .number {
-        color: var(--color-good-dark);
-        background-color: var(--color-good-pale);
+        color: var(--color-good);
+        background-color: var(--color-black);
       }
     }
 
     &[class~='average'] {
-      background-color: var(--color-average-pale);
+      background-color: var(--color-black);
 
       .number {
-        color: var(--color-average-dark);
-        background-color: var(--color-average-pale);
+        color: var(--color-average);
+        background-color: var(--color-black);
       }
     }
   }

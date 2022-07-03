@@ -6,7 +6,7 @@
   export let posts: any;
   export let page: number;
   export let postCount: number;
-  export let tag: string = '';
+  export let tag = '';
 </script>
 
 <PagePanel>

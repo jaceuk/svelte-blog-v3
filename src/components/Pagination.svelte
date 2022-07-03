@@ -1,11 +1,12 @@
 <script lang="ts">
-  import MdChevronRight from 'svelte-icons/md/MdChevronRight.svelte';
-  import MdChevronLeft from 'svelte-icons/md/MdChevronLeft.svelte';
+  import ChevronRight from '@components/svgs/ChevronRight.svelte';
+  import ChevronLeft from '@components/svgs/ChevronLeft.svelte';
+  import Link from '@components/Link.svelte';
   import { postsPerPage } from '@lib/stores';
 
   export let page: number;
   export let postCount: number;
-  export let tag: string = '';
+  export let tag = '';
 
   const totalNumberOfPages = postCount / $postsPerPage;
   const folderPath: string = tag ? 'tag' : 'blog';
@@ -13,18 +14,16 @@
 </script>
 
 <div class="pagination">
-  <a
-    class="button"
-    aria-disabled={page <= 1}
-    aria-label="Next posts"
-    href={page > 1 ? `/${folderPath}/${pagePath}?page=${page - 1}` : ''}><MdChevronLeft /></a
-  >
-  <a
-    class="button"
-    aria-disabled={page >= totalNumberOfPages}
-    aria-label="Previous posts"
-    href={page < totalNumberOfPages ? `/${folderPath}/${pagePath}?page=${page + 1}` : ''}><MdChevronRight /></a
-  >
+  <Link disabled={page <= 1} label="Next posts" href={page > 1 ? `/${folderPath}/${pagePath}?page=${page - 1}` : ''}
+    ><ChevronLeft />
+  </Link>
+
+  <Link
+    disabled={page >= totalNumberOfPages}
+    label="Previous posts"
+    href={page < totalNumberOfPages ? `/${folderPath}/${pagePath}?page=${page + 1}` : ''}
+    ><ChevronRight />
+  </Link>
 </div>
 
 <style lang="scss">
@@ -32,20 +31,5 @@
     display: flex;
     justify-content: center;
     gap: var(--size-large);
-  }
-
-  a {
-    height: 61px;
-
-    &[aria-disabled='true'] {
-      cursor: default;
-      opacity: 0.2;
-      pointer-events: none;
-
-      &:hover {
-        background-color: var(--color-white);
-        color: var(--color-nearly-black);
-      }
-    }
   }
 </style>

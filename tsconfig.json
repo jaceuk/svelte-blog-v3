@@ -22,8 +22,8 @@
       "@lib/*": ["src/lib/*"],
       "@utils": ["src/lib/utils"],
       "@utils/*": ["src/lib/utils/*"],
-      "$lib":["src/lib"],
-      "$lib/*":["src/lib/*"]
+      "$lib": ["src/lib"],
+      "$lib/*": ["src/lib/*"]
     }
   }
 }

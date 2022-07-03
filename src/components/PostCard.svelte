@@ -3,33 +3,20 @@
   import ArrowRight from '@components/svgs/ArrowRight.svelte';
   import Link from '@components/Link.svelte';
 
-  export let imageSRC: string = '';
-  export let date: string = '';
+  export let date: string;
   export let tags: [] = [];
-  export let type: string = '';
   export let title: string;
   export let intro: string;
   export let slug: string;
 </script>
 
 <div class="container">
-  {#if imageSRC}
-    <div class="image-container">
-      <img src={imageSRC} alt="" />
-    </div>
-  {/if}
-
   <div class="card">
     <div class="text-block">
       <div class="title-container">
         <div class="title">
-          {#if type}
-            <div class="type">{type}</div>
-          {/if}
           <h2 class="white-text">{title}</h2>
-          {#if date}
-            <PostMeta {date} {tags} />
-          {/if}
+          <PostMeta {date} {tags} />
         </div>
       </div>
 
@@ -78,26 +65,6 @@
   .title {
     border-left: var(--size-extra-small) solid var(--color-orange);
     padding-left: calc(var(--size-large) - var(--size-extra-small));
-  }
-
-  .type {
-    color: var(--color-orange);
-    text-transform: uppercase;
-    margin-bottom: var(--size-base);
-    font-weight: var(--font-weight-light);
-    letter-spacing: 1px;
-  }
-
-  .image-container {
-    background: var(--color-black);
-    border-radius: var(--border-radius-medium);
-    overflow: hidden;
-  }
-
-  img {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    object-position: center top;
   }
 
   .text {
