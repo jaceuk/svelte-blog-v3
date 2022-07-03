@@ -1,11 +1,11 @@
 <script lang="ts">
-  export let scores: string[];
+  export let lighthouseScores: string[];
 
   const scoreAreas = ['Performance', 'Accessibility', 'Best Practices', 'SEO'];
 </script>
 
 <div class="container">
-  {#each scores as score, index}
+  {#each lighthouseScores as score, index}
     <div class="stack justify-center">
       <div
         class="circle {parseInt(score) < 90 ? 'average' : 'good'}"

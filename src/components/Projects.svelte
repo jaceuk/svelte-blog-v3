@@ -1,13 +1,13 @@
 <script lang="ts">
-  import dogsToAdopt from '@data/dogsToAdopt.json';
+  import dogsToAdoptData from '@data/dogsToAdopt.json';
   import dogsToAdoptImage from '@images/dogs-to-adopt.jpg';
-  import ESOBuilder from '@data/ESOBuilder.json';
+  import ESOBuilderData from '@data/ESOBuilder.json';
   import ESOBuilderImage from '@images/eso-builder.jpg';
-  import EVOHomeServices from '@data/EVOHomeServices.json';
+  import EVOHomeServicesData from '@data/EVOHomeServices.json';
   import EVOHomeServicesImage from '@images/evo.jpg';
-  import VIPDine from '@data/VIPDine.json';
+  import VIPDineData from '@data/VIPDine.json';
   import VIPDineImage from '@images/vip-dine.jpg';
-  import wakefieldSecurity from '@data/wakefieldSecurity.json';
+  import wakefieldSecurityData from '@data/wakefieldSecurity.json';
   import wakefieldSecurityImage from '@images/wakefield.jpg';
   import projects from '@data/projects.json';
   import ProjectCard from '@components/ProjectCard.svelte';
@@ -26,43 +26,23 @@
 
   <div class="projects">
     <div>
-      <ProjectCard
-        type={dogsToAdopt.type}
-        title={dogsToAdopt.title}
-        intro={dogsToAdopt.intro}
-        imageSRC={dogsToAdoptImage}
-      />
+      <ProjectCard data={dogsToAdoptData} imageSRC={dogsToAdoptImage} />
     </div>
 
     <div>
-      <ProjectCard type={VIPDine.type} title={VIPDine.title} intro={VIPDine.intro} imageSRC={VIPDineImage} />
+      <ProjectCard data={VIPDineData} imageSRC={VIPDineImage} />
     </div>
 
     <div>
-      <ProjectCard
-        type={ESOBuilder.type}
-        title={ESOBuilder.title}
-        intro={ESOBuilder.intro}
-        imageSRC={ESOBuilderImage}
-      />
+      <ProjectCard data={ESOBuilderData} imageSRC={ESOBuilderImage} />
     </div>
 
     <div>
-      <ProjectCard
-        type={EVOHomeServices.type}
-        title={EVOHomeServices.title}
-        intro={EVOHomeServices.intro}
-        imageSRC={EVOHomeServicesImage}
-      />
+      <ProjectCard data={EVOHomeServicesData} imageSRC={EVOHomeServicesImage} />
     </div>
 
     <div>
-      <ProjectCard
-        type={wakefieldSecurity.type}
-        title={wakefieldSecurity.title}
-        intro={wakefieldSecurity.intro}
-        imageSRC={wakefieldSecurityImage}
-      />
+      <ProjectCard data={wakefieldSecurityData} imageSRC={wakefieldSecurityImage} />
     </div>
   </div>
 

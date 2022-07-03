@@ -14,9 +14,10 @@
     right: 0;
     z-index: 100;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     animation: mmfadeIn 0.4s ease-in-out;
+    overflow: auto;
 
     @keyframes mmfadeIn {
       from {

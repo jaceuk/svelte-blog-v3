@@ -20,7 +20,7 @@
   {/if}
 
   <div class="card">
-    <div class="text-container">
+    <div class="text-block">
       <div class="title-container">
         <div class="title">
           {#if type}
@@ -35,12 +35,18 @@
 
       <div class="text">{intro}</div>
 
-      <Link text="Read more" href={`/blog/${slug}`}><ArrowRight /></Link>
+      <div class="link">
+        <Link text="Read more" href={`/blog/${slug}`}><ArrowRight /></Link>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
+  .link {
+    margin: auto auto 0 auto;
+  }
+
   .container {
     height: 100%;
     display: flex;
@@ -61,12 +67,8 @@
     padding-bottom: var(--size-base);
   }
 
-  .text-container {
+  .text-block {
     padding: var(--size-large) 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
   }
 
   .title-container {
@@ -99,6 +101,6 @@
   }
 
   .text {
-    padding: var(--size-medium) var(--size-large) var(--size-large) var(--size-large);
+    padding: 0 var(--size-large) var(--size-medium) var(--size-large);
   }
 </style>

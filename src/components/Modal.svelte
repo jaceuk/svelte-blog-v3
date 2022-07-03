@@ -20,15 +20,19 @@
       </Button>
     </div>
 
-    <div class="panel">Modal</div>
+    <slot />
   </div>
 </Overlay>
 
 <style lang="scss">
   .close {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: var(--size-medium);
+    right: var(--size-medium);
     z-index: 20;
+  }
+
+  .wrapper {
+    margin: var(--size-medium);
   }
 </style>

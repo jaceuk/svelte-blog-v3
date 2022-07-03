@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 a {
   color: var(--color-nearly-black);
 }
@@ -63,14 +67,14 @@ body {
 }
 
 blockquote {
-  background: var(--color-pale-grey);
+  background: var(--color-dark-grey);
   padding: var(--size-medium);
-  border-left: var(--size-small) solid var(--color-nearly-black-80);
+  border-left: var(--size-extra-small) solid var(--color-orange);
   font-style: italic;
 }
 
 blockquote:before {
-  color: #ccc;
+  color: var(--color-orange);
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
@@ -87,4 +91,11 @@ ul {
   display: flex;
   flex-direction: column;
   gap: var(--size-base);
+}
+
+.text-block {
+  display: flex;
+  gap: var(--size-medium);
+  flex-direction: column;
+  height: 100%;
 }
