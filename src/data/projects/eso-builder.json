@@ -1,6 +1,5 @@
 {
   "title": "ESO Builder",
-  "image": "eso-builder.jpg",
   "slug": "eso-builder",
   "intro": "A companion web app to support The Elder Scrolls Online, a popular massively multiplayer online roleplaying game.",
   "type": "Web app",

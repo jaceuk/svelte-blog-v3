@@ -1,6 +1,6 @@
 <script lang="ts">
   export let text: string;
-  export let handleClick: () => void;
+  export let handleClick = () => {};
 </script>
 
 <button on:click={handleClick}>{text}<slot /></button>

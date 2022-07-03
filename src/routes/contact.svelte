@@ -92,30 +92,30 @@
 
 <Header>Let's talk</Header>
 
+{#if processing}
+  <Overlay><Loader>Sending your message</Loader></Overlay>
+{/if}
+
 <PagePanel>
   <div class="h3">Please get in touch to talk about, well, anything really.</div>
 
   <div>
-    {#if processing}
-      <Overlay><Loader>Sending your message</Loader></Overlay>
-    {/if}
-
-    {#if outcome.status === 200}
-      <Alert type="success">Your message was sent successfully.</Alert>
-    {/if}
-
-    {#if outcome.status === 400}
-      <Alert type="error">ReCAPTCHA failed. Please try again.</Alert>
-    {/if}
-
-    {#if outcome.status === 500}
-      <Alert type="error"
-        >There was a problem sending your message, please try again.<br />If the problem perists please email
-        info@jace.info.</Alert
-      >
-    {/if}
-
     <form on:submit|preventDefault={handleSubmit}>
+      {#if outcome.status === 200}
+        <Alert type="success">Your message was sent successfully.</Alert>
+      {/if}
+
+      {#if outcome.status === 400}
+        <Alert type="error">ReCAPTCHA failed. Please try again.</Alert>
+      {/if}
+
+      {#if outcome.status === 500}
+        <Alert type="error"
+          >There was a problem sending your message, please try again.<br />If the problem perists please email
+          info@jace.info.</Alert
+        >
+      {/if}
+
       <div class="form-field">
         <label for="name" class="label"> Your name (required) </label>
         <input id="name" type="text" class="input" required bind:value={name} />

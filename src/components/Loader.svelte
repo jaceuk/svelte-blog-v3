@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { Diamonds } from 'svelte-loading-spinners';
+  import { Shadow } from 'svelte-loading-spinners';
 </script>
 
 <div class="container">
-  <Diamonds size={80} color="#FFFFFF" />
+  <Shadow size={30} color="#FFFFFF" />
   <slot />
-  <Diamonds size={80} color="#FFFFFF" />
 </div>
 
 <style lang="scss">
@@ -18,6 +17,7 @@
     margin: var(--size-base);
     color: var(--color-white);
     text-align: center;
+    margin-top: var(--size-large);
 
     @media (max-width: 767px) {
       flex-direction: column;

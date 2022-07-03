@@ -1,19 +1,14 @@
 <script lang="ts">
-  import dogsToAdoptData from '@data/dogsToAdopt.json';
+  import dogsToAdoptData from '@data/projects/dogs-to-adopt.json';
   import dogsToAdoptImage from '@images/dogs-to-adopt.jpg';
-  import dogsToAdoptImageScreenshot from '@images/dogs-to-adopt-screenshot.jpg';
-  import ESOBuilderData from '@data/ESOBuilder.json';
+  import ESOBuilderData from '@data/projects/eso-builder.json';
   import ESOBuilderImage from '@images/eso-builder.jpg';
-  import ESOBuilderScreenshot from '@images/eso-builder-screenshot.jpg';
-  import EVOHomeServicesData from '@data/EVOHomeServices.json';
-  import EVOHomeServicesImage from '@images/evo.jpg';
-  import EVOHomeServicesScreenshot from '@images/evo-screenshot.jpg';
-  import VIPDineData from '@data/VIPDine.json';
+  import EVOHomeServicesData from '@data/projects/evo-home-services.json';
+  import EVOHomeServicesImage from '@images/evo-home-services.jpg';
+  import VIPDineData from '@data/projects/vip-dine.json';
   import VIPDineImage from '@images/vip-dine.jpg';
-  import VIPDineScreenshot from '@images/vip-dine-screenshot.jpg';
-  import wakefieldSecurityData from '@data/wakefieldSecurity.json';
-  import wakefieldSecurityImage from '@images/wakefield.jpg';
-  import wakefieldSecurityScreenshot from '@images/wakefield-screenshot.jpg';
+  import wakefieldSecurityData from '@data/projects/wakefieldSecurity.json';
+  import wakefieldSecurityImage from '@images/wakefield-security.jpg';
   import projects from '@data/projects.json';
   import ProjectCard from '@components/ProjectCard.svelte';
   import moon from '@images/moon.svg';
@@ -31,31 +26,23 @@
 
   <div class="projects">
     <div>
-      <ProjectCard data={dogsToAdoptData} imageSRC={dogsToAdoptImage} screenshotSRC={dogsToAdoptImageScreenshot} />
+      <ProjectCard data={dogsToAdoptData} imageSRC={dogsToAdoptImage} />
     </div>
 
     <div>
-      <ProjectCard data={VIPDineData} imageSRC={VIPDineImage} screenshotSRC={VIPDineScreenshot} />
+      <ProjectCard data={VIPDineData} imageSRC={VIPDineImage} />
     </div>
 
     <div>
-      <ProjectCard data={ESOBuilderData} imageSRC={ESOBuilderImage} screenshotSRC={ESOBuilderScreenshot} />
+      <ProjectCard data={ESOBuilderData} imageSRC={ESOBuilderImage} />
     </div>
 
     <div>
-      <ProjectCard
-        data={EVOHomeServicesData}
-        imageSRC={EVOHomeServicesImage}
-        screenshotSRC={EVOHomeServicesScreenshot}
-      />
+      <ProjectCard data={EVOHomeServicesData} imageSRC={EVOHomeServicesImage} />
     </div>
 
     <div>
-      <ProjectCard
-        data={wakefieldSecurityData}
-        imageSRC={wakefieldSecurityImage}
-        screenshotSRC={wakefieldSecurityScreenshot}
-      />
+      <ProjectCard data={wakefieldSecurityData} imageSRC={wakefieldSecurityImage} />
     </div>
   </div>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import MdCheckCircle from 'svelte-icons/md/MdCheckCircle.svelte';
-  import MdError from 'svelte-icons/md/MdError.svelte';
+  import Checked from '@components/svgs/Checked.svelte';
+  import Warning from '@components/svgs/Warning.svelte';
 
   export let type: string;
 </script>
@@ -8,11 +8,11 @@
 <div class="container {type}" role={type === 'error' ? 'alert' : undefined}>
   <div class="icon-container">
     {#if type === 'success'}
-      <MdCheckCircle />
+      <Checked />
     {/if}
 
     {#if type === 'error'}
-      <MdError />
+      <Warning />
     {/if}
   </div>
   <div class="text-container"><slot /></div>
@@ -27,28 +27,28 @@
     padding: var(--size-base);
     color: var(--color-white);
     border-radius: var(--border-radius-medium);
+    background-color: var(--color-dark-grey);
 
     &.success {
-      background-color: var(--color-good-pale);
-      color: var(--color-good-dark);
+      color: var(--color-good);
+      border: 2px solid var(--color-good);
 
       .icon-container {
-        color: var(--color-good-dark);
+        color: var(--color-good);
       }
     }
 
     &.error {
-      background-color: var(--color-poor-pale);
-      color: var(--color-poor-dark);
+      color: var(--color-poor);
+      border: 2px solid var(--color-poor);
 
       .icon-container {
-        color: var(--color-poor-dark);
+        color: var(--color-poor);
       }
     }
 
     .icon-container {
-      height: 40px;
-      min-width: 40px;
+      padding-top: var(--size-small);
     }
 
     .text-container {
