@@ -27,6 +27,8 @@
       return project.default.slug.toLowerCase() === slug.toLowerCase();
     });
 
+    if (!filteredProject) return { status: 404 };
+
     return {
       props: {
         data: filteredProject.default,
