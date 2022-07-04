@@ -8,7 +8,11 @@
     z-index: -1;
     color: var(--color-white);
     text-align: center;
-    padding: var(--size-large) 0;
+    padding: var(--size-large);
     background: var(--color-black);
+
+    @media (max-width: 820px) {
+      padding: var(--size-medium);
+    }
   }
 </style>

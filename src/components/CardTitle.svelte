@@ -29,7 +29,7 @@
     min-width: 84px;
     color: var(--color-white);
 
-    @media (max-width: 767px) {
+    @media (max-width: 820px) {
       height: 64px;
       min-width: 64px;
     }

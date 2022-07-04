@@ -9,9 +9,13 @@
   <img class="moon" src={moon} alt="" />
 </div>
 
-<style>
+<style lang="scss">
   .panel {
     padding: var(--size-extra-large);
+
+    @media (max-width: 820px) {
+      padding: var(--size-large) var(--size-medium);
+    }
   }
 
   .moon {

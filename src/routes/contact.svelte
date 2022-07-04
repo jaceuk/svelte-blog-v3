@@ -82,8 +82,6 @@
   }
 </script>
 
-<!-- TODO: Can I improve this layout? -->
-
 <svelte:head>
   <title>Contact</title>
   <script

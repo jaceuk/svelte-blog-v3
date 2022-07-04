@@ -30,8 +30,9 @@
     grid-template-columns: 1fr 1fr;
     padding-bottom: var(--size-large);
 
-    @media (max-width: 767px) {
+    @media (max-width: 1200px) {
       grid-template-columns: 1fr;
+      grid-gap: var(--size-large);
     }
   }
 

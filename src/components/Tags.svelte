@@ -28,5 +28,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--size-medium);
+
+    @media (max-width: 820px) {
+      gap: var(--size-base);
+      padding: var(--size-base);
+    }
   }
 </style>

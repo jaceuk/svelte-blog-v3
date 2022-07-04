@@ -69,7 +69,7 @@
   }
 
   .text-block {
-    padding: var(--size-large) 0;
+    padding: var(--size-medium) 0;
   }
 
   .title-container {
@@ -79,6 +79,10 @@
   .title {
     border-left: var(--size-extra-small) solid var(--color-orange);
     padding-left: calc(var(--size-large) - var(--size-extra-small));
+
+    @media (max-width: 820px) {
+      padding-left: calc(var(--size-medium) - var(--size-extra-small));
+    }
   }
 
   .type {
@@ -102,9 +106,13 @@
   }
 
   .text {
-    padding: 0 var(--size-large) var(--size-medium) var(--size-large);
+    padding: 0 var(--size-large);
     display: flex;
     flex-direction: column;
     gap: var(--size-medium);
+
+    @media (max-width: 820px) {
+      padding: 0 var(--size-medium);
+    }
   }
 </style>

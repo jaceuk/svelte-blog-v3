@@ -46,20 +46,21 @@
 
 <style lang="scss">
   .moon {
-    filter: grayscale(1);
-    position: absolute;
     top: -407px;
-    right: -56px;
   }
 
   .panel {
     padding: var(--size-extra-large);
     overflow: hidden;
+
+    @media (max-width: 820px) {
+      padding: var(--size-large) var(--size-medium);
+    }
   }
 
   h2 {
     position: relative;
-    z-index: 10;
+    z-index: 20;
   }
 
   .callouts {
@@ -80,6 +81,18 @@
       'developer callouts'
       'skills skills'
       'designer geek';
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(5, auto);
+      gap: var(--size-large);
+      grid-template-areas:
+        'developer'
+        'callouts'
+        'skills'
+        'designer'
+        'geek';
+    }
 
     .developer {
       grid-area: developer;

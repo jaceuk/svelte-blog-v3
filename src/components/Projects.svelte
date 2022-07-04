@@ -90,13 +90,21 @@
 
   .title {
     border-left: 8px solid var(--color-orange);
-    padding-left: calc(var(--size-extra-large) - 8px);
+    padding: 0 var(--size-medium) 0 calc(var(--size-extra-large) - 8px);
+
+    @media (max-width: 820px) {
+      padding: 0 var(--size-base) 0 calc(var(--size-medium) - 8px);
+    }
   }
 
   .title-container {
     margin: var(--size-extra-large) 0 0 0;
     z-index: 20;
     position: relative;
+
+    @media (max-width: 820px) {
+      margin: var(--size-large) 0;
+    }
   }
 
   .projects {
@@ -107,5 +115,14 @@
     gap: var(--size-extra-large);
     z-index: 20;
     position: relative;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr;
+      gap: var(--size-large);
+    }
+
+    @media (max-width: 820px) {
+      margin: var(--size-medium);
+    }
   }
 </style>

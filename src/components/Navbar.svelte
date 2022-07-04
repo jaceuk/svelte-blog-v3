@@ -1,12 +1,12 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import logo from '@images/logo.svg';
+  import Logo from '@components/svgs/Logo.svelte';
 </script>
 
 <div class="container">
   <div class="inner">
     <a class="logo-link" href="/">
-      <img class="logo" src={logo} alt="" />
+      <Logo />
     </a>
 
     <nav>

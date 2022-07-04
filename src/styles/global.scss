@@ -1,5 +1,3 @@
-// TODO: Mobile and tablet styling
-
 html {
   scroll-behavior: smooth;
 }
@@ -12,6 +10,10 @@ body {
   overflow-x: hidden;
   background: var(--color-black);
   padding: var(--size-medium);
+
+  @media (max-width: 820px) {
+    padding: 0;
+  }
 }
 
 .wrapper {
@@ -29,6 +31,10 @@ body {
   box-shadow: inset 0px 0px 0px var(--size-extra-small) var(--color-grey);
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 820px) {
+    border-radius: 0;
+  }
 }
 
 .content {
@@ -43,6 +49,10 @@ body {
   width: 520px;
   min-width: 520px;
   right: -56px;
+
+  @media (max-width: 820px) {
+    right: -346px;
+  }
 }
 
 .orange-text {
@@ -96,4 +106,8 @@ ul {
   gap: var(--size-medium);
   flex-direction: column;
   height: 100%;
+}
+
+.grecaptcha-badge {
+  z-index: 50;
 }

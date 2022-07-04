@@ -19,7 +19,7 @@
     text-align: center;
     margin-top: var(--size-large);
 
-    @media (max-width: 767px) {
+    @media (max-width: 820px) {
       flex-direction: column;
       padding: var(--size-base);
       border-radius: var(--border-radius-medium);

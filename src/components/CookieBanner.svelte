@@ -34,7 +34,7 @@
     z-index: 100;
     box-shadow: 0px 3px 24px var(--color-nearly-black-20);
 
-    @media (max-width: 767px) {
+    @media (max-width: 820px) {
       padding: var(--size-base);
     }
   }
@@ -44,13 +44,13 @@
     gap: var(--size-medium);
     z-index: 100;
 
-    @media (max-width: 767px) {
+    @media (max-width: 820px) {
       flex-direction: column;
     }
   }
 
   .button {
-    @media (max-width: 767px) {
+    @media (max-width: 820px) {
       width: 100%;
       justify-content: center;
     }

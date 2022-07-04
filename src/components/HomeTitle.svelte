@@ -16,7 +16,9 @@
     <h1 class="large">Jason Newington</h1>
     <div class="h3">Creating out of this world websites!</div>
   </div>
-  <Button text="Featured projects" {handleClick}><ArrowDown /></Button>
+  <div class="button">
+    <Button text="Featured projects" {handleClick}><ArrowDown /></Button>
+  </div>
 </div>
 
 <div>
@@ -122,16 +124,21 @@
   .title {
     border-left: 8px solid var(--color-orange);
     padding-left: calc(var(--size-extra-large) - 8px);
+    max-width: 750px;
+
+    @media (max-width: 820px) {
+      padding-left: calc(var(--size-medium) - 8px);
+    }
   }
 
   .title-container {
     margin: var(--size-max) 0 var(--size-extra-large) 0;
-    max-width: 650px;
+    width: 100%;
     position: relative;
     z-index: 20;
     display: flex;
     gap: var(--size-large);
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
   }
 
@@ -146,5 +153,18 @@
     bottom: 350px;
     right: 156px;
     z-index: 10;
+
+    @media (max-width: 820px) {
+      right: -64px;
+      bottom: 310px;
+    }
+  }
+
+  .button {
+    margin-left: var(--size-extra-large);
+
+    @media (max-width: 820px) {
+      margin: auto;
+    }
   }
 </style>

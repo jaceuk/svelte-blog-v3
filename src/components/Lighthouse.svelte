@@ -23,15 +23,22 @@
 <style lang="scss">
   .container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     gap: var(--size-medium);
     text-align: center;
     width: calc(400px + 6 * var(--size-medium));
     margin: 0 auto;
 
+    @media (max-width: 820px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-row: auto;
+      width: 100%;
+    }
+
     @media (max-width: 767px) {
-      grid-template-columns: 1fr 1fr;
-      grid-row: auto auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
       width: 100%;
     }
   }
@@ -46,11 +53,11 @@
   .circle {
     border-radius: var(--border-radius-max);
     padding: var(--size-extra-small);
-    width: 88px;
-    height: 88px;
+    width: 128px;
+    height: 128px;
 
     .number {
-      font-size: var(--font-size-h3);
+      font-size: var(--font-size-h2);
       width: fit-content;
       margin: 0 auto;
       padding: var(--size-base);
@@ -59,31 +66,32 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 80px;
-      height: 80px;
+      position: relative;
+      top: 2px;
+      width: 116px;
+      height: 116px;
     }
 
     &[class~='good'] {
-      background-color: var(--color-black);
+      background-color: var(--color-good-dark);
 
       .number {
         color: var(--color-good);
-        background-color: var(--color-black);
+        background-color: var(--color-good-dark);
       }
     }
 
     &[class~='average'] {
-      background-color: var(--color-black);
+      background-color: var(--color-average-dark);
 
       .number {
         color: var(--color-average);
-        background-color: var(--color-black);
+        background-color: var(--color-average-dark);
       }
     }
   }
 
   .type {
     text-align: center;
-    font-size: var(--font-size-small);
   }
 </style>

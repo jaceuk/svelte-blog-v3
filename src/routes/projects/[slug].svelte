@@ -54,8 +54,6 @@
   const lighthouseScores = data.lighthouseScores;
 </script>
 
-<!-- TODO: rework layout -->
-
 <svelte:head>
   <title>{title}</title>
   <meta name="description" content="xxxx" />
@@ -71,7 +69,9 @@
         <p>{paragraph}</p>
       {/each}
     </div>
-    <div class="screenshot"><img src={`../src/images/${slug}-screenshot.jpg`} alt="" /></div>
+    <div class="screenshot">
+      <img src={`../src/images/${slug}-screenshot.jpg`} alt="" />
+    </div>
     <div class="features text-block">
       <h2>Notes</h2>
       {#each notes as note}
@@ -94,8 +94,20 @@
     gap: var(--size-extra-large);
     grid-template-areas:
       'overview screenshot'
-      'lighthouse lighthouse'
-      'features tags';
+      'tags tags'
+      'features lighthouse';
+
+    @media (max-width: 820px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(5, auto);
+      gap: var(--size-large);
+      grid-template-areas:
+        'screenshot'
+        'overview'
+        'tags'
+        'lighthouse'
+        'features';
+    }
 
     .overview {
       grid-area: overview;
