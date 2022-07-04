@@ -54,11 +54,10 @@
   <meta name="description" content={meta.intro} />
 </svelte:head>
 
-<PageHeader>{meta.title}</PageHeader>
+<PageHeader>{meta.title}<span slot="subtitle"><PostMeta date={meta.date} tags={meta.tags} /></span></PageHeader>
 
 <PagePanel>
   <div class="post-content">
-    <PostMeta date={meta.date} tags={meta.tags} />
     <svelte:component this={page} />
   </div>
 </PagePanel>

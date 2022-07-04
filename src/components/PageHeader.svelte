@@ -12,6 +12,7 @@
         <div class="h3 type">{type}</div>
       {/if}
       <h1><slot /></h1>
+      <slot name="subtitle" />
       {#if subtitle}
         <div class="h3">{subtitle}</div>
       {/if}

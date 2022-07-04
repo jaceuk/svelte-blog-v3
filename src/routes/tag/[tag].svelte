@@ -42,6 +42,6 @@
   <title>Blog</title>
 </svelte:head>
 
-<PageHeader>Blog posts</PageHeader>
+<PageHeader subtitle={`tagged with '${tagParam}'`}>Blog posts</PageHeader>
 
 <Posts {posts} {page} tag={tagParam} {postCount} />

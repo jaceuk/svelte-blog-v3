@@ -10,9 +10,6 @@
 </script>
 
 <PagePanel>
-  {#if tag}
-    <div class="h3">Posts tagged with '{tag}'.</div>
-  {/if}
   <div class="grid">
     {#each posts as post}
       <Card title={post.title} intro={post.intro} date={post.date} tags={post.tags} slug={post.slug} />
