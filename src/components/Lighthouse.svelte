@@ -68,8 +68,8 @@
       justify-content: center;
       position: relative;
       top: 2px;
-      width: 116px;
-      height: 116px;
+      width: 117px;
+      height: 117px;
     }
 
     &[class~='good'] {
