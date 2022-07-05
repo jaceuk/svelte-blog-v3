@@ -42,7 +42,7 @@
   import PagePanel from '@components/PagePanel.svelte';
   import Tags from '@components/Tags.svelte';
   import Lighthouse from '@components/Lighthouse.svelte';
-  import SlideUp from '@components/SlideUp.svelte';
+  import Transition from '@components/Transition.svelte';
 
   export let data: any;
 
@@ -64,37 +64,37 @@
 
 <PagePanel>
   <div class="container">
-    <SlideUp>
+    <Transition>
       <div class="screenshot">
         <img src={`../src/images/${slug}-screenshot.jpg`} alt="" />
       </div>
-    </SlideUp>
+    </Transition>
 
-    <SlideUp>
+    <Transition>
       <div class="overview text-block">
         <h2>Overview</h2>
         {#each overview as paragraph}
           <p>{paragraph}</p>
         {/each}
       </div>
-    </SlideUp>
+    </Transition>
 
-    <SlideUp>
+    <Transition>
       <div class="features text-block">
         <h2>Notes</h2>
         {#each notes as note}
           <p>{note}</p>
         {/each}
       </div>
-    </SlideUp>
+    </Transition>
 
-    <div class="tags"><SlideUp><Tags {skills} /></SlideUp></div>
+    <div class="tags"><Transition><Tags {skills} /></Transition></div>
 
-    <SlideUp>
+    <Transition>
       <div class="lighthouse">
         <Lighthouse {lighthouseScores} />
       </div>
-    </SlideUp>
+    </Transition>
   </div>
 </PagePanel>
 

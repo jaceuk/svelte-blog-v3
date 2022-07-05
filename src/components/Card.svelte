@@ -2,7 +2,7 @@
   import ArrowRight from '@components/svgs/ArrowRight.svelte';
   import Link from '@components/Link.svelte';
   import PostMeta from '@components/PostMeta.svelte';
-  import SlideUp from '@components/SlideUp.svelte';
+  import Transition from '@components/Transition.svelte';
 
   export let date = '';
   export let tags: [] = [];
@@ -27,7 +27,7 @@
   };
 </script>
 
-<SlideUp>
+<Transition>
   <div class="container">
     {#if imageSRC}
       <div class="image-container">
@@ -62,7 +62,7 @@
       </div>
     </div>
   </div>
-</SlideUp>
+</Transition>
 
 <style lang="scss">
   .link {

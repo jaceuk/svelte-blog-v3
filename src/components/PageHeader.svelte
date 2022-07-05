@@ -1,5 +1,6 @@
 <script lang="ts">
   import moon from '@images/moon.svg';
+  import Transition from '@components/Transition.svelte';
 
   export let type = '';
   export let subtitle = '';
@@ -7,16 +8,18 @@
 
 <header class="panel">
   <div class="title-container">
-    <div class="title">
-      {#if type}
-        <div class="h3 type">{type}</div>
-      {/if}
-      <h1><slot /></h1>
-      <slot name="subtitle" />
-      {#if subtitle}
-        <div class="h3">{subtitle}</div>
-      {/if}
-    </div>
+    <Transition>
+      <div class="title">
+        {#if type}
+          <div class="h3 type">{type}</div>
+        {/if}
+        <h1><slot /></h1>
+        <slot name="subtitle" />
+        {#if subtitle}
+          <div class="h3">{subtitle}</div>
+        {/if}
+      </div>
+    </Transition>
   </div>
 
   <img class="moon" src={moon} alt="" />

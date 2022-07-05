@@ -5,7 +5,7 @@
   import PagePanel from '@components/PagePanel.svelte';
   import Button from '@components/Button.svelte';
   import PageHeader from '@components/PageHeader.svelte';
-  import SlideUp from '@components/SlideUp.svelte';
+  import Transition from '@components/Transition.svelte';
 
   interface IOutcome {
     status: number;
@@ -99,11 +99,9 @@
 {/if}
 
 <PagePanel>
-  <SlideUp>
+  <Transition>
     <div class="h3">Please get in touch to talk about, well, anything really.</div>
-  </SlideUp>
 
-  <SlideUp>
     <form on:submit|preventDefault={handleSubmit}>
       {#if outcome.status === 200}
         <Alert type="success">Your message was sent successfully.</Alert>
@@ -139,7 +137,7 @@
         <Button text="Send your message" />
       </div>
     </form>
-  </SlideUp>
+  </Transition>
 </PagePanel>
 
 <style type="scss">

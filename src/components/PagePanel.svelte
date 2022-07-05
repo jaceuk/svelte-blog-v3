@@ -1,5 +1,6 @@
 <script>
   import moon from '@images/moon.svg';
+  import Transition from '@components/Transition.svelte';
 </script>
 
 <div class="panel">

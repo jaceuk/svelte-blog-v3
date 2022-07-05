@@ -4,6 +4,7 @@
   import moon from '@images/moon.svg';
   import rocket from '@images/rocket.svg';
   import star from '@images/star.svg';
+  import Transition from '@components/Transition.svelte';
 
   function handleClick() {
     var element = document.querySelector('#featured-projects');
@@ -12,27 +13,34 @@
 </script>
 
 <div class="title-container">
-  <div class="title">
-    <h1 class="large">Jason Newington</h1>
-    <div class="h3">Creating out of this world websites!</div>
-  </div>
-  <div class="button">
-    <Button text="Featured projects" {handleClick}><ArrowDown /></Button>
-  </div>
+  <Transition>
+    <div class="title">
+      <h1 class="large">Jason Newington</h1>
+      <div class="h3">Creating out of this world websites!</div>
+    </div>
+  </Transition>
+
+  <Transition>
+    <div class="button">
+      <Button text="Featured projects" {handleClick}><ArrowDown /></Button>
+    </div>
+  </Transition>
 </div>
 
 <div>
   <img class="moon" src={moon} alt="" />
   <img class="rocket" src={rocket} alt="" />
   <div>
-    <img class="star" src={star} alt="" />
-    <img class="star" src={star} alt="" />
-    <img class="star" src={star} alt="" />
-    <img class="star" src={star} alt="" />
-    <img class="star small" src={star} alt="" />
-    <img class="star small" src={star} alt="" />
-    <img class="star small" src={star} alt="" />
-    <img class="star small" src={star} alt="" />
+    <Transition>
+      <img class="star" src={star} alt="" />
+      <img class="star" src={star} alt="" />
+      <img class="star" src={star} alt="" />
+      <img class="star" src={star} alt="" />
+      <img class="star small" src={star} alt="" />
+      <img class="star small" src={star} alt="" />
+      <img class="star small" src={star} alt="" />
+      <img class="star small" src={star} alt="" />
+    </Transition>
   </div>
 </div>
 

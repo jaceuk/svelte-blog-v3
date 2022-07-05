@@ -12,16 +12,19 @@
   import projects from '@data/projects.json';
   import Card from '@components/Card.svelte';
   import moon from '@images/moon.svg';
+  import Transition from '@components/Transition.svelte';
 </script>
 
 <div class="panel" id="featured-projects">
   <div class="title-container">
-    <div class="title">
-      <h1>{projects.title}</h1>
-      {#each projects.text as paragraph}
-        <div class="h3">{paragraph}</div>
-      {/each}
-    </div>
+    <Transition>
+      <div class="title">
+        <h1>{projects.title}</h1>
+        {#each projects.text as paragraph}
+          <div class="h3">{paragraph}</div>
+        {/each}
+      </div>
+    </Transition>
   </div>
 
   <div class="projects">

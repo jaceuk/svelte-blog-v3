@@ -6,52 +6,52 @@
   import Callout from '@components/Callout.svelte';
   import Tags from '@components/Tags.svelte';
   import moon from '@images/moon.svg';
-  import SlideUp from '@components/SlideUp.svelte';
+  import Transition from '@components/Transition.svelte';
 </script>
 
 <div class="panel text-block">
-  <SlideUp>
+  <Transition>
     <h2 class="h1 orange-text">{developer.title}</h2>
-  </SlideUp>
+  </Transition>
   <div class="container">
-    <SlideUp>
+    <Transition>
       <div class="developer text-block">
         {#each developer.text as paragraph}
           <p>{paragraph}</p>
         {/each}
       </div>
-    </SlideUp>
+    </Transition>
 
-    <SlideUp>
+    <Transition>
       <div class="callouts">
         <Callout header="Experience" content="20+" footer="years" />
         <Callout header="Projects" content="??" footer="Lost count!" />
       </div>
-    </SlideUp>
+    </Transition>
 
     <div class="skills">
-      <SlideUp>
+      <Transition>
         <Tags {skills} />
-      </SlideUp>
+      </Transition>
     </div>
 
-    <SlideUp>
+    <Transition>
       <div class="designer text-block">
         <h2>{designer.title}</h2>
         {#each designer.text as paragraph}
           <p>{paragraph}</p>
         {/each}
       </div>
-    </SlideUp>
+    </Transition>
 
-    <SlideUp>
+    <Transition>
       <div class="geek text-block">
         <h2>{geek.title}</h2>
         {#each geek.text as paragraph}
           <p>{paragraph}</p>
         {/each}
       </div>
-    </SlideUp>
+    </Transition>
   </div>
 
   <img class="moon" src={moon} alt="" />

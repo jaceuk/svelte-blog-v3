@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fly } from 'svelte/transition';
+  import { fade, blur } from 'svelte/transition';
   import { sineOut } from 'svelte/easing';
   import { inview } from 'svelte-inview';
 
@@ -20,7 +20,7 @@
 
 <div use:inview={options} on:enter={handleEnter} class="container">
   {#key isInView}
-    <div in:fly={{ y: 50, duration: 500, easing: sineOut }} class="container">
+    <div in:fade={{ duration: 1000, easing: sineOut }} class="container">
       <slot />
     </div>
   {/key}
