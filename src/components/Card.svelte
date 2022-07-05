@@ -2,6 +2,7 @@
   import ArrowRight from '@components/svgs/ArrowRight.svelte';
   import Link from '@components/Link.svelte';
   import PostMeta from '@components/PostMeta.svelte';
+  import SlideUp from '@components/SlideUp.svelte';
 
   export let date = '';
   export let tags: [] = [];
@@ -10,42 +11,62 @@
   export let slug: string;
   export let type = '';
   export let imageSRC = '';
+
+  let isInView: boolean;
+
+  const options = {
+    unobserveOnEnter: true,
+  };
+
+  interface IProps {
+    detail: any;
+  }
+
+  const handleEnter = ({ detail }: IProps) => {
+    isInView = detail.inView;
+  };
 </script>
 
-<div class="container">
-  {#if imageSRC}
-    <div class="image-container">
-      <img src={imageSRC} alt="" />
-    </div>
-  {/if}
+<SlideUp>
+  <div class="container">
+    {#if imageSRC}
+      <div class="image-container">
+        <a href={`/${type ? 'projects' : 'blog'}/${slug}`}>
+          <img src={imageSRC} alt="" />
+        </a>
+      </div>
+    {/if}
 
-  <div class="card">
-    <div class="text-block">
-      <div class="title-container">
-        <div class="title">
-          {#if type}
-            <div class="type">{type}</div>
-          {/if}
-          <h2 class="white-text">{title}</h2>
+    <div class="card">
+      <div class="text-block">
+        <div class="title-container">
+          <div class="title">
+            {#if type}
+              <div class="type">{type}</div>
+            {/if}
+            <h2 class="white-text">
+              <a href={`/${type ? 'projects' : 'blog'}/${slug}`}>{title}</a>
+            </h2>
+          </div>
         </div>
-      </div>
 
-      <div class="text">
-        {#if date}
-          <PostMeta {date} {tags} />
-        {/if}{intro}
-      </div>
+        <div class="text">
+          {#if date}
+            <PostMeta {date} {tags} />
+          {/if}{intro}
+        </div>
 
-      <div class="link">
-        <Link text="Read more" href={`/${type ? 'projects' : 'blog'}/${slug}`}><ArrowRight /></Link>
+        <div class="link">
+          <Link text="Read more" type="more" href={`/${type ? 'projects' : 'blog'}/${slug}`}><ArrowRight /></Link>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</SlideUp>
 
 <style lang="scss">
   .link {
-    margin: auto auto 0 auto;
+    margin: auto var(--size-medium) 0 auto;
   }
 
   .container {
@@ -64,10 +85,6 @@
     flex-grow: 1;
   }
 
-  h2 {
-    padding-bottom: var(--size-base);
-  }
-
   .text-block {
     padding: var(--size-medium) 0;
   }
@@ -78,10 +95,12 @@
 
   .title {
     border-left: var(--size-extra-small) solid var(--color-orange);
-    padding-left: calc(var(--size-large) - var(--size-extra-small));
+    padding-left: calc(var(--size-medium) - var(--size-extra-small));
+    padding-right: var(--size-medium);
 
     @media (max-width: 820px) {
       padding-left: calc(var(--size-medium) - var(--size-extra-small));
+      padding-right: var(--size-medium);
     }
   }
 
@@ -106,7 +125,7 @@
   }
 
   .text {
-    padding: 0 var(--size-large);
+    padding: 0 var(--size-medium);
     display: flex;
     flex-direction: column;
     gap: var(--size-medium);

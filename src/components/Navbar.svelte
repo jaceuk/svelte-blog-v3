@@ -10,10 +10,15 @@
     </a>
 
     <nav>
-      <a class="link" class:active={$page.url.pathname === '/'} href="/">Home</a>
-      <a class="link" class:active={$page.url.pathname === '/blog/posts'} href="/blog/posts">Blog</a>
-      <a class="link" class:active={$page.url.pathname === '/contact'} href="/contact">Contact</a>
-      <span class="underline" />
+      <a class="link" href="/">Home</a>
+      <a class="link" href="/blog/posts">Blog</a>
+      <a class="link" href="/contact">Contact</a>
+      <span
+        class="underline"
+        class:home={$page.url.pathname === '/' || $page.url.pathname.startsWith('/projects/')}
+        class:blog={$page.url.pathname === '/blog/posts'}
+        class:contact={$page.url.pathname === '/contact'}
+      />
     </nav>
   </div>
 </div>
@@ -51,21 +56,34 @@
     font-weight: var(--font-weight-bold);
   }
 
-  a:nth-child(1).active ~ .underline {
-    transform: translatex(0px);
-    transition: transform 0.2s ease-out;
-  }
-
-  a:nth-child(2).active ~ .underline {
-    transform: translatex(109px);
-    transition: transform 0.2s ease-out;
+  .underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 80px;
-  }
+    height: var(--size-extra-small);
+    background: var(--color-orange);
+    border-radius: 28px;
+    z-index: -1;
+    transition: 9999s transform 0.2s ease-out;
 
-  a:nth-child(3).active ~ .underline {
-    transform: translatex(205px);
-    transition: transform 0.2s ease-out;
-    width: 104px;
+    &.home {
+      transform: translatex(0px);
+      transition: transform 0.2s ease-out;
+      width: 93px;
+    }
+
+    &.blog {
+      transform: translatex(109px);
+      transition: transform 0.2s ease-out;
+      width: 80px;
+    }
+
+    &.contact {
+      transform: translatex(205px);
+      transition: transform 0.2s ease-out;
+      width: 104px;
+    }
   }
 
   nav {
@@ -74,17 +92,5 @@
     align-items: center;
     z-index: 20;
     position: relative;
-  }
-
-  .underline {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 93px;
-    height: var(--size-extra-small);
-    background: var(--color-orange);
-    border-radius: 28px;
-    z-index: -1;
-    transition: 9999s transform 0.2s ease-out;
   }
 </style>

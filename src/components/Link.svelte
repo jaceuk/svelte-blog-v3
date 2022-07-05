@@ -3,9 +3,10 @@
   export let href: string;
   export let disabled = false;
   export let label = '';
+  export let type = '';
 </script>
 
-<a {href} aria-disabled={disabled} aria-label={label}>{text}<slot /></a>
+<a {href} class:more={type} aria-disabled={disabled} aria-label={label}>{text}<slot /></a>
 
 <style lang="scss">
   a {
@@ -14,7 +15,6 @@
     border-radius: var(--border-radius-super);
     padding: var(--size-base) var(--size-medium);
     font-weight: var(--font-weight-bold);
-    border: 1px solid var(--color-nearly-black);
     cursor: pointer;
     box-shadow: var(--card-box-shadow);
     transition: var(--transition-fast);
@@ -37,9 +37,23 @@
       opacity: 0.2;
       pointer-events: none;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: var(--color-white);
         color: var(--color-nearly-black);
+      }
+    }
+
+    &.more {
+      border-radius: none;
+      background-color: transparent;
+      color: var(--color-orange);
+      box-shadow: none;
+      padding: 0;
+
+      &:hover,
+      &:focus {
+        color: var(--color-white);
       }
     }
   }

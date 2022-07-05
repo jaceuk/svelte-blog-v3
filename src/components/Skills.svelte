@@ -6,39 +6,52 @@
   import Callout from '@components/Callout.svelte';
   import Tags from '@components/Tags.svelte';
   import moon from '@images/moon.svg';
+  import SlideUp from '@components/SlideUp.svelte';
 </script>
 
 <div class="panel text-block">
-  <h2 class="h1 orange-text">{developer.title}</h2>
+  <SlideUp>
+    <h2 class="h1 orange-text">{developer.title}</h2>
+  </SlideUp>
   <div class="container">
-    <div class="developer text-block">
-      {#each developer.text as paragraph}
-        <p>{paragraph}</p>
-      {/each}
-    </div>
+    <SlideUp>
+      <div class="developer text-block">
+        {#each developer.text as paragraph}
+          <p>{paragraph}</p>
+        {/each}
+      </div>
+    </SlideUp>
 
-    <div class="callouts">
-      <Callout header="Experience" content="20+" footer="years" />
-      <Callout header="Projects" content="??" footer="Lost count!" />
-    </div>
+    <SlideUp>
+      <div class="callouts">
+        <Callout header="Experience" content="20+" footer="years" />
+        <Callout header="Projects" content="??" footer="Lost count!" />
+      </div>
+    </SlideUp>
 
     <div class="skills">
-      <Tags {skills} />
+      <SlideUp>
+        <Tags {skills} />
+      </SlideUp>
     </div>
 
-    <div class="designer text-block">
-      <h2>{designer.title}</h2>
-      {#each designer.text as paragraph}
-        <p>{paragraph}</p>
-      {/each}
-    </div>
+    <SlideUp>
+      <div class="designer text-block">
+        <h2>{designer.title}</h2>
+        {#each designer.text as paragraph}
+          <p>{paragraph}</p>
+        {/each}
+      </div>
+    </SlideUp>
 
-    <div class="geek text-block">
-      <h2>{geek.title}</h2>
-      {#each geek.text as paragraph}
-        <p>{paragraph}</p>
-      {/each}
-    </div>
+    <SlideUp>
+      <div class="geek text-block">
+        <h2>{geek.title}</h2>
+        {#each geek.text as paragraph}
+          <p>{paragraph}</p>
+        {/each}
+      </div>
+    </SlideUp>
   </div>
 
   <img class="moon" src={moon} alt="" />

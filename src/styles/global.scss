@@ -5,12 +5,13 @@ html {
 }
 
 a {
-  color: var(--color-nearly-black);
+  color: var(--color-white);
+  text-decoration: none;
 }
 
 body {
   overflow-x: hidden;
-  background: var(--color-black) url(../images/stars.png) repeat 50% 50%;
+  background: var(--color-black) url(../images/stars.png) repeat 50% top;
   background-size: contain;
   padding: var(--size-medium);
 

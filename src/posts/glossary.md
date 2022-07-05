@@ -7,9 +7,9 @@ tags: ['Misc']
 
 Does anyone else sometimes stop and look at their code and, whilst understanding what's going on, would struggle to explain what a specific term means?
 
-Ok, so it's just me then :) Regardless here's a glossary of terms to help remind me of exactly what they mean.
+Ok, so it's just me then. Regardless here's a glossary of terms to help remind me of exactly what they mean.
 
-**Note:** I've included some really simple ones as well as they may be of help still learning.
+**Note:** I've included terms that apply to a wide range of skill levels as they may be of help to anyone still learning.
 
 ## React
 

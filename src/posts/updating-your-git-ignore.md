@@ -1,5 +1,5 @@
 ---
-title: 'Apply .gitignore to an existing repository'
+title: 'Updating your .gitignore'
 date: '2022-06-30'
 intro: 'Find out how to easily add or change a .gitignore for an existing Git repository.'
 tags: ['Git']
@@ -19,7 +19,7 @@ Be sure to commit or stash any unsaved changes and then run:
 
 This will remove all the files from the index.
 
-## Recreate the Git index
+## Update the Git index
 
 Now you need to create an up to date index with:
 

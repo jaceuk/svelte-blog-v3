@@ -35,5 +35,6 @@
   }
   a {
     color: var(--color-orange);
+    text-decoration: underline;
   }
 </style>
