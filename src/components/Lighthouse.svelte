@@ -30,7 +30,7 @@
     width: calc(400px + 6 * var(--size-medium));
     margin: 0 auto;
 
-    @media (max-width: 820px) {
+    @media (max-width: 1200px) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-row: auto;
       width: 100%;

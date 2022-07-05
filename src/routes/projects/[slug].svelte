@@ -97,7 +97,7 @@
       'tags tags'
       'features lighthouse';
 
-    @media (max-width: 820px) {
+    @media (max-width: 1200px) {
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(5, auto);
       gap: var(--size-large);
