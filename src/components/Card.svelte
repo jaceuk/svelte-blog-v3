@@ -57,7 +57,12 @@
         </div>
 
         <div class="link">
-          <Link text="Read more" type="more" href={`/${type ? 'projects' : 'blog'}/${slug}`}><ArrowRight /></Link>
+          <Link
+            text="Read more"
+            label={`Read more about ${title}`}
+            type="more"
+            href={`/${type ? 'projects' : 'blog'}/${slug}`}><ArrowRight /></Link
+          >
         </div>
       </div>
     </div>
