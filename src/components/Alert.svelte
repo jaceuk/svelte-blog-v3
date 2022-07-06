@@ -27,7 +27,7 @@
     padding: var(--size-base);
     color: var(--color-white);
     border-radius: var(--border-radius-medium);
-    background-color: var(--color-dark-grey);
+    background-color: transparent;
 
     &.success {
       color: var(--color-good);

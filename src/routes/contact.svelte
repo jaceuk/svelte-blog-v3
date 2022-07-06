@@ -98,53 +98,65 @@
   <Overlay><Loader>Sending your message</Loader></Overlay>
 {/if}
 
+<!-- TODO: change contact page to a slide in panel of some sort? -->
+
 <PagePanel>
   <Transition>
     <div class="h3">Please get in touch to talk about, well, anything really.</div>
 
-    <form on:submit|preventDefault={handleSubmit}>
-      {#if outcome.status === 200}
-        <Alert type="success">Your message was sent successfully.</Alert>
-      {/if}
+    <div class="panel">
+      <form on:submit|preventDefault={handleSubmit}>
+        {#if outcome.status === 200}
+          <Alert type="success">Your message was sent successfully.</Alert>
+        {/if}
 
-      {#if outcome.status === 400}
-        <Alert type="error">ReCAPTCHA failed. Please try again.</Alert>
-      {/if}
+        {#if outcome.status === 400}
+          <Alert type="error">ReCAPTCHA failed. Please try again.</Alert>
+        {/if}
 
-      {#if outcome.status === 500}
-        <Alert type="error"
-          >There was a problem sending your message, please try again.<br />If the problem perists please email
-          info@jace.info.</Alert
-        >
-      {/if}
+        {#if outcome.status === 500}
+          <Alert type="error"
+            >There was a problem sending your message, please try again.<br />If the problem perists please email
+            info@jace.info.</Alert
+          >
+        {/if}
 
-      <div class="form-field">
-        <label for="name" class="label"> Your name (required) </label>
-        <input id="name" type="text" class="input" required bind:value={name} />
-      </div>
+        <div class="form-field">
+          <label for="name" class="label"> Your name (required) </label>
+          <input id="name" type="text" class="input" required bind:value={name} />
+        </div>
 
-      <div class="form-field">
-        <label for="email" class="label">Your email address (required)</label>
-        <input id="email" type="email" class="input" required bind:value={email} />
-      </div>
+        <div class="form-field">
+          <label for="email" class="label">Your email address (required)</label>
+          <input id="email" type="email" class="input" required bind:value={email} />
+        </div>
 
-      <div class="form-field">
-        <label for="message" class="label">Your message (required)</label>
-        <textarea id="message" class="input" rows={8} required bind:value={message} />
-      </div>
+        <div class="form-field">
+          <label for="message" class="label">Your message (required)</label>
+          <textarea id="message" class="input" rows={8} required bind:value={message} />
+        </div>
 
-      <div class="submit">
-        <Button text="Send your message" />
-      </div>
-    </form>
+        <div class="submit">
+          <Button text="Send your message" />
+        </div>
+      </form>
+    </div>
   </Transition>
 </PagePanel>
 
 <style type="scss">
+  .panel {
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--card-box-shadow);
+    background: transparent;
+    padding: var(--padding-large);
+    padding: var(--size-large);
+    max-width: 850px;
+  }
+
   form {
     display: grid;
     gap: var(--size-large);
-    max-width: 750px;
   }
 
   .form-field {
@@ -169,7 +181,7 @@
     border-radius: var(--border-radius-small);
     justify-items: center;
     color: var(--color-white);
-    box-shadow: var(--card-box-shadow);
+    box-shadow: inset 0px 0px 0px 2px var(--color-grey);
   }
 
   .submit {
