@@ -98,8 +98,6 @@
   <Overlay><Loader>Sending your message</Loader></Overlay>
 {/if}
 
-<!-- TODO: change contact page to a slide in panel of some sort? -->
-
 <PagePanel>
   <Transition>
     <div class="h3">Please get in touch to talk about, well, anything really.</div>
