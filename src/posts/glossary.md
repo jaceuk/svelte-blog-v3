@@ -11,6 +11,28 @@ Ok, so it's just me then. Regardless here's a glossary of terms to help remind m
 
 **Note:** I've included terms that apply to a wide range of skill levels as they may be of help to anyone still learning.
 
+## Acronyms
+
+### HTML
+
+HyperText Markup Language
+
+### CSS
+
+Cascading Style Sheet
+
+### Sass
+
+Syntactically Awesome Style Sheets
+
+### Less
+
+Leaner Style Sheets
+
+### PHP
+
+PHP: Hypertext Preprocessor
+
 ## React
 
 ### useEffect
