@@ -26,7 +26,7 @@
     font-weight: var(--font-weight-bold);
     padding: var(--size-base);
     color: var(--color-white);
-    border-radius: var(--border-radius-medium);
+    border-radius: var(--border-radius-small);
     background-color: transparent;
 
     &.success {

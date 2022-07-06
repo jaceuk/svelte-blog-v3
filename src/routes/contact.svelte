@@ -104,7 +104,7 @@
   <Transition>
     <div class="h3">Please get in touch to talk about, well, anything really.</div>
 
-    <div class="panel">
+    <div class="container">
       <form on:submit|preventDefault={handleSubmit}>
         {#if outcome.status === 200}
           <Alert type="success">Your message was sent successfully.</Alert>
@@ -122,17 +122,17 @@
         {/if}
 
         <div class="form-field">
-          <label for="name" class="label"> Your name (required) </label>
+          <label for="name" class="label"> Your name <span class="small required">(required)</span></label>
           <input id="name" type="text" class="input" required bind:value={name} />
         </div>
 
         <div class="form-field">
-          <label for="email" class="label">Your email address (required)</label>
+          <label for="email" class="label">Your email address <span class="small required">(required)</span></label>
           <input id="email" type="email" class="input" required bind:value={email} />
         </div>
 
         <div class="form-field">
-          <label for="message" class="label">Your message (required)</label>
+          <label for="message" class="label">Your message <span class="small required">(required)</span></label>
           <textarea id="message" class="input" rows={8} required bind:value={message} />
         </div>
 
@@ -145,7 +145,10 @@
 </PagePanel>
 
 <style type="scss">
-  .panel {
+  .required {
+    color: var(--color-orange);
+  }
+  .container {
     border-radius: var(--border-radius-medium);
     box-shadow: var(--card-box-shadow);
     background: transparent;
