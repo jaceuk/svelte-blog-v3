@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fade, blur } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
   import { sineOut } from 'svelte/easing';
   import { inview } from 'svelte-inview';
 

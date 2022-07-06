@@ -2,6 +2,7 @@
   import { browser } from '$app/env';
   import { fly } from 'svelte/transition';
   import { sineOut } from 'svelte/easing';
+  import Button from '@components/Button.svelte';
 
   let cookieConsent = (browser && !!localStorage.getItem('cookieConsent')) || false;
 
@@ -19,40 +20,39 @@
         are happy with this.
       </div>
 
-      <button class="button" on:click={handleAccept}>Accept</button>
+      <Button text="Accept" handleClick={handleAccept} />
     </div>
   </div>
 {/if}
 
 <style lang="scss">
   .container {
-    background: var(--color-white-80);
-    padding: var(--size-base) 0;
+    background: rgba(var(--color-black-rgb), 0.8);
     position: fixed;
+    left: 0;
     top: 0;
     width: 100%;
     z-index: 100;
-    box-shadow: 0px 3px 24px var(--color-nearly-black-20);
 
     @media (max-width: 820px) {
-      padding: var(--size-base);
+      padding: var(--size-medium);
     }
   }
 
   .inner {
+    color: var(--color-orange);
+    margin: auto;
+    max-width: calc(var(--size-max-width) - 2 * var(--size-medium));
+    padding: var(--size-large);
     display: flex;
-    gap: var(--size-medium);
-    z-index: 100;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--size-large);
 
     @media (max-width: 820px) {
       flex-direction: column;
-    }
-  }
-
-  .button {
-    @media (max-width: 820px) {
-      width: 100%;
-      justify-content: center;
+      gap: var(--size-medium);
+      padding: var(--size-base);
     }
   }
 </style>
