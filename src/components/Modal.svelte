@@ -4,6 +4,7 @@
   import { focusTrap } from 'svelte-focus-trap';
   import Overlay from '@components/Overlay.svelte';
   import Button from '@components/Button.svelte';
+  import Transition from '@components/Transition.svelte';
 
   export let image: string;
 
@@ -15,15 +16,17 @@
 </script>
 
 <Overlay>
-  <div class="imageContainer" use:focusTrap>
-    <div class="close">
-      <Button text="Close" handleClick={handleClose}>
-        <Close />
-      </Button>
-    </div>
+  <Transition>
+    <div class="imageContainer" use:focusTrap>
+      <div class="close">
+        <Button text="Close" handleClick={handleClose}>
+          <Close />
+        </Button>
+      </div>
 
-    <img class="image" src="/src/images/{image}" alt="" />
-  </div>
+      <img class="image" src="/src/images/{image}" alt="" />
+    </div>
+  </Transition>
 </Overlay>
 
 <style lang="scss">
@@ -39,19 +42,7 @@
     justify-content: center;
     width: fit-content;
     max-width: calc(100% - 2 * var(--size-medium));
-    transform: translateY(0.01%);
-    animation: mmslideIn 0.4s ease-in-out;
     padding: var(--size-medium) 0;
-
-    @keyframes mmslideIn {
-      from {
-        transform: translateY(5%);
-      }
-
-      to {
-        transform: translateY(0);
-      }
-    }
   }
 
   .close {
