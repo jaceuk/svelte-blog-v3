@@ -20,7 +20,7 @@
         are happy with this.
       </div>
 
-      <Button text="Accept" handleClick={handleAccept} />
+      <Button handleClick={handleAccept}>Accept</Button>
     </div>
   </div>
 {/if}

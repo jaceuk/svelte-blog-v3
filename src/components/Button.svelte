@@ -1,9 +1,9 @@
 <script lang="ts">
-  export let text: string;
   export let handleClick = () => {};
+  export let type = '';
 </script>
 
-<button on:click={handleClick}>{text}<slot /></button>
+<button class:link={type === 'link'} on:click={handleClick}><slot /></button>
 
 <style lang="scss">
   button {
@@ -27,6 +27,20 @@
     &:hover {
       background: var(--color-black);
       color: var(--color-white);
+    }
+
+    &.link {
+      border-radius: none;
+      background-color: transparent;
+      color: var(--color-orange);
+      box-shadow: none;
+      padding: 0;
+      border: none;
+
+      &:hover,
+      &:focus {
+        color: var(--color-white);
+      }
     }
   }
 </style>

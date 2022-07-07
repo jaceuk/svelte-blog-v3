@@ -15,14 +15,14 @@
 <div class="title-container">
   <Transition>
     <div class="title">
-      <h1 class="large">Jason Newington</h1>
-      <div class="h3">Creating out of this world websites!</div>
+      <h1 class="large">Out of this world websites</h1>
+      <div class="h3">and apps, of course!</div>
     </div>
   </Transition>
 
   <Transition>
     <div class="button">
-      <Button text="Featured projects" {handleClick}><ArrowDown /></Button>
+      <Button {handleClick}>Featured projects<ArrowDown /></Button>
     </div>
   </Transition>
 </div>
@@ -127,12 +127,13 @@
 
   h1 {
     padding-bottom: var(--size-base);
+    max-width: var(--size-content-max-width);
   }
 
   .title {
     border-left: 8px solid var(--color-orange);
     padding-left: calc(var(--size-extra-large) - 8px);
-    max-width: var(--size-content-max-width);
+    padding-right: var(--size-medium);
 
     @media (max-width: 900px) {
       padding-left: calc(var(--size-medium) - 8px);

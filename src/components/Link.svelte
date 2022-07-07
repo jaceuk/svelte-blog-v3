@@ -1,22 +1,16 @@
 <script lang="ts">
-  export let text = '';
   export let href: string;
   export let disabled = false;
   export let label = '';
-  export let type = '';
+  export let target = '';
 </script>
 
-<a {href} class:more={type} aria-disabled={disabled} aria-label={label}>{text}<slot /></a>
+<a {href} aria-disabled={disabled} aria-label={label} {target}><slot /></a>
 
 <style lang="scss">
   a {
-    background: var(--color-white);
-    color: var(--color-nearly-black);
-    border-radius: var(--border-radius-super);
-    padding: var(--size-base) var(--size-medium);
     font-weight: var(--font-weight-bold);
     cursor: pointer;
-    box-shadow: var(--card-box-shadow);
     transition: var(--transition-fast);
     display: flex;
     align-items: center;
@@ -26,9 +20,14 @@
     display: flex;
     align-items: center;
     margin-top: auto;
+    border-radius: none;
+    background-color: transparent;
+    color: var(--color-orange);
+    box-shadow: none;
+    padding: 0;
 
-    &:hover {
-      background: var(--color-black);
+    &:hover,
+    &:focus {
       color: var(--color-white);
     }
 
@@ -41,19 +40,6 @@
       &:focus {
         background-color: var(--color-white);
         color: var(--color-nearly-black);
-      }
-    }
-
-    &.more {
-      border-radius: none;
-      background-color: transparent;
-      color: var(--color-orange);
-      box-shadow: none;
-      padding: 0;
-
-      &:hover,
-      &:focus {
-        color: var(--color-white);
       }
     }
   }

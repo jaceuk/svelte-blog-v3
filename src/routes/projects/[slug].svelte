@@ -45,10 +45,14 @@
   import Lighthouse from '@components/Lighthouse.svelte';
   import Transition from '@components/Transition.svelte';
   import Modal from '@components/Modal.svelte';
+  import Link from '@components/Link.svelte';
+  import Button from '@components/Button.svelte';
+  import NewWindow from '@components/svgs/NewWindow.svelte';
 
   export let data: any;
 
   const title = data.title;
+  const url = data.url;
   const type = data.type;
   const overview = data.text;
   const slug = data.slug;
@@ -57,6 +61,7 @@
   const lighthouseScores = data.lighthouseScores;
 
   let showModal = false;
+  let siteOnline = false;
 
   function handleToggleModal() {
     showModal = !showModal;
@@ -71,13 +76,27 @@
 
 <PageHeader {type}>{title}</PageHeader>
 
+<!-- TODO: add link lo live site with check to see if site is online on page load -->
+
 <PagePanel>
   <div class="container">
     <Transition>
       <div class="overview">
-        <button class="screenshot" on:click={handleToggleModal}>
-          <img src={`../src/images/${slug}-screenshot.jpg`} alt="" />
-        </button>
+        <div class="screenshot-container">
+          <div class="screenshot" on:click={handleToggleModal}>
+            <img src={`../src/images/${slug}-screenshot.jpg`} alt="" />
+          </div>
+
+          <div class="links">
+            <Button type="link" handleClick={handleToggleModal}>
+              Screenshot<NewWindow />
+            </Button>
+
+            <Link label={`Read more about ${title}`} href={url} target="_blank">
+              Live site<NewWindow />
+            </Link>
+          </div>
+        </div>
 
         <div class="text-block">
           <h2>Overview</h2>
@@ -114,6 +133,23 @@
 {/if}
 
 <style lang="scss">
+  .links {
+    display: flex;
+    gap: var(--size-large);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .screenshot-container {
+    display: flex;
+    gap: var(--size-large);
+    flex-direction: column;
+
+    @media (max-width: 767px) {
+      gap: var(--size-medium);
+    }
+  }
+
   .container {
     display: flex;
     flex-direction: column;

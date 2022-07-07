@@ -19,8 +19,8 @@
   <Transition>
     <div class="imageContainer" use:focusTrap>
       <div class="close">
-        <Button text="Close" handleClick={handleClose}>
-          <Close />
+        <Button handleClick={handleClose}>
+          Close<Close />
         </Button>
       </div>
 

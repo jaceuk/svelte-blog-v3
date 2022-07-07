@@ -1,12 +1,13 @@
+<!-- TODO: Mobile nav -->
 <script lang="ts">
   import { page } from '$app/stores';
-  import Logo from '@components/svgs/Logo.svelte';
+  import LogoName from '@components/svgs/LogoName.svelte';
 </script>
 
 <div class="container">
   <div class="inner">
     <a class="logo-link" href="/">
-      <Logo />
+      <LogoName />
     </a>
 
     <nav>
@@ -39,13 +40,8 @@
 
   .logo-link {
     z-index: 20;
-    width: 65px;
+    width: 349px;
     height: 65px;
-  }
-
-  .logo {
-    width: 100%;
-    height: 100%;
   }
 
   .link {

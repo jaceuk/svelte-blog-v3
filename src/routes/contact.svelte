@@ -135,7 +135,7 @@
         </div>
 
         <div class="submit">
-          <Button text="Send your message" />
+          <Button>Send your message</Button>
         </div>
       </form>
     </div>
