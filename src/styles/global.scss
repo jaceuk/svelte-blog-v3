@@ -13,9 +13,19 @@ body {
   background-size: contain;
   padding: var(--size-medium);
 
+  &.modal-open {
+    overflow: hidden;
+  }
+
   @media (max-width: 820px) {
     padding: 0;
   }
+}
+
+button {
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .wrapper {

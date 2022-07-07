@@ -43,6 +43,7 @@
   import Tags from '@components/Tags.svelte';
   import Lighthouse from '@components/Lighthouse.svelte';
   import Transition from '@components/Transition.svelte';
+  import Modal from '@components/Modal.svelte';
 
   export let data: any;
 
@@ -53,6 +54,13 @@
   const notes = data.notes;
   const skills = data.skills;
   const lighthouseScores = data.lighthouseScores;
+
+  let showModal = false;
+
+  function handleToggleModal() {
+    showModal = !showModal;
+    document.body.classList.toggle('modal-open');
+  }
 </script>
 
 <svelte:head>
@@ -65,9 +73,9 @@
 <PagePanel>
   <div class="container">
     <Transition>
-      <div class="screenshot">
+      <button class="screenshot" on:click={handleToggleModal}>
         <img src={`../src/images/${slug}-screenshot.jpg`} alt="" />
-      </div>
+      </button>
     </Transition>
 
     <Transition>
@@ -97,6 +105,10 @@
     </Transition>
   </div>
 </PagePanel>
+
+{#if showModal}
+  <Modal image={`${slug}-screenshot.jpg`} on:close={handleToggleModal} />
+{/if}
 
 <style lang="scss">
   .container {
