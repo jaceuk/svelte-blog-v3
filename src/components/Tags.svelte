@@ -29,7 +29,7 @@
     flex-wrap: wrap;
     gap: var(--size-medium);
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       gap: var(--size-base);
       padding: var(--size-base);
     }

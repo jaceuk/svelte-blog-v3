@@ -71,6 +71,6 @@
     display: flex;
     gap: var(--size-medium);
     flex-direction: column;
-    max-width: 750px;
+    max-width: var(--size-content-max-width);
   }
 </style>

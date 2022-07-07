@@ -18,13 +18,11 @@
   };
 </script>
 
-<div use:inview={options} on:enter={handleEnter} class="container">
-  {#key isInView}
-    <div in:fade={{ duration: 1000, easing: sineOut }} class="container">
-      <slot />
-    </div>
-  {/key}
-</div>
+{#key isInView}
+  <div use:inview={options} on:enter={handleEnter} in:fade={{ duration: 1000, easing: sineOut }} class="container">
+    <slot />
+  </div>
+{/key}
 
 <style>
   .container {

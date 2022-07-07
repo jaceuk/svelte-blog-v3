@@ -95,7 +95,7 @@
     border-left: 8px solid var(--color-orange);
     padding: 0 var(--size-medium) 0 calc(var(--size-extra-large) - 8px);
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       padding: 0 var(--size-base) 0 calc(var(--size-medium) - 8px);
     }
   }
@@ -105,7 +105,7 @@
     z-index: 20;
     position: relative;
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       margin: var(--size-large) 0;
     }
   }
@@ -124,7 +124,7 @@
       gap: var(--size-large);
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       margin: var(--size-medium);
     }
   }

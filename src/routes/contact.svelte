@@ -167,7 +167,7 @@
 
   .h3 {
     margin-bottom: var(--size-large);
-    max-width: 750px;
+    max-width: var(--size-content-max-width);
   }
 
   .label {

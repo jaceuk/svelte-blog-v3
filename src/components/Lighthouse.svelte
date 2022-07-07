@@ -23,18 +23,11 @@
 <style lang="scss">
   .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--size-medium);
     text-align: center;
-    width: calc(400px + 6 * var(--size-medium));
     margin: 0 auto;
-
-    @media (max-width: 1200px) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-row: auto;
-      width: 100%;
-    }
+    width: 100%;
 
     @media (max-width: 767px) {
       grid-template-columns: repeat(2, 1fr);

@@ -43,6 +43,7 @@
     width: fit-content;
     max-width: calc(100% - 2 * var(--size-medium));
     padding: var(--size-medium) 0;
+    margin: auto;
   }
 
   .close {

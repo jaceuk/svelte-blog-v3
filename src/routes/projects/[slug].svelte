@@ -1,3 +1,4 @@
+<!-- TODO: Create new screenshot thumbnails -->
 <script context="module" lang="ts">
   interface IParams {
     params: IParam;
@@ -73,26 +74,17 @@
 <PagePanel>
   <div class="container">
     <Transition>
-      <button class="screenshot" on:click={handleToggleModal}>
-        <img src={`../src/images/${slug}-screenshot.jpg`} alt="" />
-      </button>
-    </Transition>
+      <div class="overview">
+        <button class="screenshot" on:click={handleToggleModal}>
+          <img src={`../src/images/${slug}-screenshot.jpg`} alt="" />
+        </button>
 
-    <Transition>
-      <div class="overview text-block">
-        <h2>Overview</h2>
-        {#each overview as paragraph}
-          <p>{paragraph}</p>
-        {/each}
-      </div>
-    </Transition>
-
-    <Transition>
-      <div class="features text-block">
-        <h2>Notes</h2>
-        {#each notes as note}
-          <p>{note}</p>
-        {/each}
+        <div class="text-block">
+          <h2>Overview</h2>
+          {#each overview as paragraph}
+            <p>{paragraph}</p>
+          {/each}
+        </div>
       </div>
     </Transition>
 
@@ -101,6 +93,17 @@
     <Transition>
       <div class="lighthouse">
         <Lighthouse {lighthouseScores} />
+      </div>
+    </Transition>
+
+    <!-- TODO: Redo notes -->
+
+    <Transition>
+      <div class="features text-block">
+        <h2>Notes</h2>
+        {#each notes as note}
+          <p>{note}</p>
+        {/each}
       </div>
     </Transition>
   </div>
@@ -112,46 +115,13 @@
 
 <style lang="scss">
   .container {
-    display: grid;
-    align-items: start;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);
+    display: flex;
+    flex-direction: column;
     gap: var(--size-extra-large);
-    grid-template-areas:
-      'overview screenshot'
-      'tags tags'
-      'features lighthouse';
+    max-width: var(--size-content-max-width);
 
     @media (max-width: 1200px) {
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: repeat(5, auto);
       gap: var(--size-large);
-      grid-template-areas:
-        'screenshot'
-        'overview'
-        'tags'
-        'lighthouse'
-        'features';
-    }
-
-    .overview {
-      grid-area: overview;
-    }
-
-    .screenshot {
-      grid-area: screenshot;
-    }
-
-    .features {
-      grid-area: features;
-    }
-
-    .tags {
-      grid-area: tags;
-    }
-
-    .lighthouse {
-      grid-area: lighthouse;
     }
   }
 
@@ -159,5 +129,21 @@
     border-radius: var(--border-radius-medium);
     overflow: hidden;
     box-shadow: var(--card-box-shadow);
+
+    img {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  .overview {
+    display: flex;
+    gap: var(--size-extra-large);
+    flex-direction: column;
+
+    @media (max-width: 1200px) {
+      gap: var(--size-large);
+    }
   }
 </style>

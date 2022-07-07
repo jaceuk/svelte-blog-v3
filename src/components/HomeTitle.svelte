@@ -132,9 +132,9 @@
   .title {
     border-left: 8px solid var(--color-orange);
     padding-left: calc(var(--size-extra-large) - 8px);
-    max-width: 750px;
+    max-width: var(--size-content-max-width);
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       padding-left: calc(var(--size-medium) - 8px);
     }
   }
@@ -162,7 +162,7 @@
     right: 156px;
     z-index: 10;
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       right: -64px;
       bottom: 310px;
     }
@@ -171,8 +171,8 @@
   .button {
     margin-left: var(--size-extra-large);
 
-    @media (max-width: 820px) {
-      margin: auto;
+    @media (max-width: 900px) {
+      margin-left: var(--size-medium);
     }
   }
 </style>

@@ -103,7 +103,7 @@
     padding-left: calc(var(--size-medium) - var(--size-extra-small));
     padding-right: var(--size-medium);
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       padding-left: calc(var(--size-medium) - var(--size-extra-small));
       padding-right: var(--size-medium);
     }
@@ -135,7 +135,7 @@
     flex-direction: column;
     gap: var(--size-medium);
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       padding: 0 var(--size-medium);
     }
   }

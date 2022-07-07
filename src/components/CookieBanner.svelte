@@ -34,7 +34,7 @@
     width: 100%;
     z-index: 100;
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       padding: var(--size-medium);
     }
   }
@@ -49,7 +49,7 @@
     align-items: center;
     gap: var(--size-large);
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       flex-direction: column;
       gap: var(--size-medium);
       padding: var(--size-base);

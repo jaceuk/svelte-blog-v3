@@ -1,6 +1,7 @@
 :root {
   /* sizes */
   --size-max-width: 1400px;
+  --size-content-max-width: 800px;
   --size-extra-small: 0.4rem;
   --size-small: 0.8rem;
   --size-base: 1.6rem;

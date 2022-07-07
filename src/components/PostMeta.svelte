@@ -32,6 +32,7 @@
   .post-meta {
     font-weight: var(--font-weight-light);
     color: var(--color-orange);
+    padding-top: var(--size-base);
   }
   a {
     color: var(--color-orange);

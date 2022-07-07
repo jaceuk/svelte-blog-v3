@@ -66,7 +66,7 @@
     padding: var(--size-extra-large);
     overflow: hidden;
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       padding: var(--size-large) var(--size-medium);
     }
   }

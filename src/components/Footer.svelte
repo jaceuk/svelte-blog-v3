@@ -11,7 +11,7 @@
     padding: var(--size-large);
     background: var(--color-black);
 
-    @media (max-width: 820px) {
+    @media (max-width: 900px) {
       padding: var(--size-medium);
     }
   }
