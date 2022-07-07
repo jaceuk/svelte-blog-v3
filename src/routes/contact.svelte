@@ -149,7 +149,7 @@
   .container {
     border-radius: var(--border-radius-medium);
     box-shadow: var(--card-box-shadow);
-    background: transparent;
+    background: var(--color-dark-grey);
     padding: var(--padding-large);
     padding: var(--size-large);
     max-width: 850px;
@@ -178,7 +178,7 @@
     border: none;
     width: 100%;
     padding: var(--size-medium);
-    background: var(--color-dark-grey);
+    background: var(--color-grey);
     border-radius: var(--border-radius-small);
     justify-items: center;
     color: var(--color-white);
