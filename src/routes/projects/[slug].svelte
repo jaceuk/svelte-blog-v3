@@ -76,16 +76,16 @@
 
 <PageHeader {type}>{title}</PageHeader>
 
-<!-- TODO: add link lo live site with check to see if site is online on page load -->
+<!-- TODO: check to see if site is online on page load -->
 
 <PagePanel>
   <div class="container">
     <Transition>
       <div class="overview">
         <div class="screenshot-container">
-          <div class="screenshot" on:click={handleToggleModal}>
+          <button class="screenshot" on:click={handleToggleModal}>
             <img src={`../src/images/${slug}-screenshot.jpg`} alt="" />
-          </div>
+          </button>
 
           <div class="links">
             <Button type="link" handleClick={handleToggleModal}>
