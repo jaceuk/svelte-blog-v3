@@ -3,12 +3,12 @@
   import Transition from '@components/Transition.svelte';
 </script>
 
-<div class="panel">
+<section class="panel">
   <div class="content">
     <slot />
   </div>
   <img class="moon" src={moon} alt="" />
-</div>
+</section>
 
 <style lang="scss">
   .panel {

@@ -15,7 +15,7 @@
   import Transition from '@components/Transition.svelte';
 </script>
 
-<div class="panel" id="featured-projects">
+<section class="panel" id="featured-projects">
   <div class="title-container">
     <Transition>
       <div class="title">
@@ -80,7 +80,7 @@
   </div>
 
   <img class="moon" src={moon} alt="" />
-</div>
+</section>
 
 <style lang="scss">
   .moon {

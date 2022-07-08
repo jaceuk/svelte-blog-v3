@@ -6,20 +6,22 @@
 
 <div class="container">
   <div class="inner">
-    <a class="logo-link" href="/">
-      <LogoName />
-    </a>
-
     <nav>
-      <a class="link" href="/">Home</a>
-      <a class="link" href="/blog/posts">Blog</a>
-      <a class="link" href="/contact">Contact</a>
-      <span
-        class="underline"
-        class:home={$page.url.pathname === '/' || $page.url.pathname.startsWith('/projects/')}
-        class:blog={$page.url.pathname === '/blog/posts'}
-        class:contact={$page.url.pathname === '/contact'}
-      />
+      <a class="logo-link" href="/" aria-label="Home">
+        <LogoName />
+      </a>
+
+      <div class="nav">
+        <a class="link" href="/">Home</a>
+        <a class="link" href="/blog/posts">Blog</a>
+        <a class="link" href="/contact">Contact</a>
+        <span
+          class="underline"
+          class:home={$page.url.pathname === '/' || $page.url.pathname.startsWith('/projects/')}
+          class:blog={$page.url.pathname === '/blog/posts'}
+          class:contact={$page.url.pathname === '/contact'}
+        />
+      </div>
     </nav>
   </div>
 </div>
@@ -83,6 +85,14 @@
   }
 
   nav {
+    display: flex;
+    gap: var(--size-base);
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav {
     display: flex;
     gap: var(--size-base);
     align-items: center;

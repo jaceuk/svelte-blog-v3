@@ -31,7 +31,7 @@
   <div class="container">
     {#if imageSRC}
       <div class="image-container">
-        <a href={`/${type ? 'projects' : 'blog'}/${slug}`}>
+        <a href={`/${type ? 'projects' : 'blog'}/${slug}`} aria-label={`Read more about ${title}`}>
           <img src={imageSRC} alt="" />
         </a>
       </div>
