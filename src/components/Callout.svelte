@@ -14,7 +14,7 @@
   .container {
     display: grid;
     padding: var(--size-base);
-    background: var(--color-dark-grey);
+    background: var(--color-card);
     border-radius: var(--border-radius-medium);
     justify-items: center;
     width: 100%;
@@ -22,7 +22,7 @@
   }
 
   .header {
-    color: var(--color-orange);
+    color: var(--color-accent);
     text-transform: uppercase;
     font-weight: var(--font-weight-light);
     letter-spacing: 1px;

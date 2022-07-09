@@ -27,7 +27,7 @@
     padding: var(--size-base);
     height: 84px;
     min-width: 84px;
-    color: var(--color-white);
+    color: var(--color-text);
 
     @media (max-width: 900px) {
       height: 64px;

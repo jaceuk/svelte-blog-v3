@@ -131,7 +131,7 @@
   }
 
   .title {
-    border-left: 8px solid var(--color-orange);
+    border-left: 8px solid var(--color-accent);
     padding-left: calc(var(--size-extra-large) - 8px);
     padding-right: var(--size-medium);
 
@@ -154,19 +154,6 @@
   .moon {
     bottom: -136px;
     z-index: 10;
-  }
-
-  .rocket {
-    filter: grayscale(1);
-    position: absolute;
-    bottom: 350px;
-    right: 156px;
-    z-index: 10;
-
-    @media (max-width: 900px) {
-      right: -64px;
-      bottom: 310px;
-    }
   }
 
   .button {

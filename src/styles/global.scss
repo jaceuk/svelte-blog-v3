@@ -3,15 +3,16 @@ html {
 }
 
 a {
-  color: var(--color-white);
+  color: var(--color-text);
   text-decoration: none;
 }
 
 body {
   overflow-x: hidden;
-  background: var(--color-black) url(../images/stars.png) repeat 50% top;
+  background: var(--color-background) url(../images/stars.png) repeat 50% top;
   background-size: contain;
   padding: var(--size-medium);
+  transition: background 0.2s;
 
   &.modal-open {
     overflow: hidden;
@@ -38,9 +39,9 @@ button {
 }
 
 .panel {
-  background: linear-gradient(135deg, rgba(65, 65, 65, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(135deg, var(--color-panel-light) 0%, var(--color-panel-dark) 100%);
   border-radius: var(--border-radius-medium);
-  box-shadow: inset 0px 0px 0px var(--size-extra-small) var(--color-grey);
+  box-shadow: inset 0px 0px 0px var(--size-extra-small) var(--color-panel-light);
   position: relative;
   overflow: hidden;
 
@@ -65,14 +66,35 @@ button {
   @media (max-width: 900px) {
     right: -346px;
   }
+
+  [data-theme='light'] & {
+    filter: grayscale(1) brightness(4);
+    opacity: 0.8;
+  }
+}
+.rocket {
+  filter: grayscale(1);
+  position: absolute;
+  bottom: 350px;
+  right: 156px;
+  z-index: 10;
+
+  @media (max-width: 900px) {
+    right: -64px;
+    bottom: 310px;
+  }
+
+  [data-theme='light'] & {
+    filter: grayscale(1) brightness(1.25);
+  }
 }
 
 .orange-text {
-  color: var(--color-orange);
+  color: var(--color-accent);
 }
 
 .white-text {
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 .accessibleText {
@@ -89,12 +111,12 @@ button {
 blockquote {
   background: var(--color-dark-grey);
   padding: var(--size-medium);
-  border-left: var(--size-extra-small) solid var(--color-orange);
+  border-left: var(--size-extra-small) solid var(--color-accent);
   font-style: italic;
 }
 
 blockquote:before {
-  color: var(--color-orange);
+  color: var(--color-accent);
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;

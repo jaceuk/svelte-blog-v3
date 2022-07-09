@@ -25,7 +25,7 @@
     align-items: flex-start;
     font-weight: var(--font-weight-bold);
     padding: var(--size-base);
-    color: var(--color-white);
+    color: var(--color-text);
     border-radius: var(--border-radius-small);
     background-color: transparent;
 

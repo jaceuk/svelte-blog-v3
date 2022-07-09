@@ -23,7 +23,7 @@
 <style lang="scss">
   .tags {
     border-radius: var(--border-radius-medium);
-    box-shadow: inset 0px 0px 0px var(--size-extra-small) var(--color-grey);
+    box-shadow: inset 0px 0px 0px var(--size-extra-small) var(--color-tags-border);
     padding: var(--size-medium);
     display: flex;
     flex-wrap: wrap;

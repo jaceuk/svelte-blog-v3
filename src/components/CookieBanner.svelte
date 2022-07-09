@@ -40,7 +40,7 @@
   }
 
   .inner {
-    color: var(--color-orange);
+    color: var(--color-accent);
     margin: auto;
     max-width: calc(var(--size-max-width) - 2 * var(--size-medium));
     padding: var(--size-large);

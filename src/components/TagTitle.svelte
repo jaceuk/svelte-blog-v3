@@ -21,7 +21,7 @@
   }
 
   .title {
-    border-left: 8px solid var(--color-orange);
+    border-left: 8px solid var(--color-accent);
     padding-left: calc(var(--size-extra-large) - 8px);
   }
 

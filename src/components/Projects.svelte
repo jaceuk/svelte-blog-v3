@@ -92,7 +92,7 @@
   }
 
   .title {
-    border-left: 8px solid var(--color-orange);
+    border-left: 8px solid var(--color-accent);
     padding: 0 var(--size-medium) 0 calc(var(--size-extra-large) - 8px);
 
     @media (max-width: 900px) {

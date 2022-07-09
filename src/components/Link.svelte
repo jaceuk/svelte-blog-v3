@@ -22,13 +22,13 @@
     margin-top: auto;
     border-radius: none;
     background-color: transparent;
-    color: var(--color-orange);
+    color: var(--color-accent);
     box-shadow: none;
     padding: 0;
 
     &:hover,
     &:focus {
-      color: var(--color-white);
+      color: var(--color-link-hover);
     }
 
     &[aria-disabled='true'] {
@@ -38,7 +38,7 @@
 
       &:hover,
       &:focus {
-        background-color: var(--color-white);
+        background-color: var(--color-text);
         color: var(--color-nearly-black);
       }
     }

@@ -31,11 +31,11 @@
 <style>
   .post-meta {
     font-weight: var(--font-weight-light);
-    color: var(--color-orange);
+    color: var(--color-accent);
     padding-top: var(--size-base);
   }
   a {
-    color: var(--color-orange);
+    color: var(--color-accent);
     text-decoration: underline;
   }
 </style>

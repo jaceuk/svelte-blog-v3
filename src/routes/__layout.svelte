@@ -1,5 +1,4 @@
 <script type="ts">
-  import { page } from '$app/stores';
   import '../styles/normalize.css';
   import '../styles/reset.css';
   import '../styles/typography.scss';

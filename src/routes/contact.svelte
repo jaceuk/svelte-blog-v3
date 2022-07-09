@@ -108,7 +108,7 @@
           <Alert type="success">Your message was sent successfully.</Alert>
         {/if}
 
-        {#if outcome.status === 400}
+        {#if outcome.status !== 400}
           <Alert type="error">ReCAPTCHA failed. Please try again.</Alert>
         {/if}
 
@@ -144,12 +144,12 @@
 
 <style type="scss">
   .required {
-    color: var(--color-orange);
+    color: var(--color-accent);
   }
   .container {
     border-radius: var(--border-radius-medium);
     box-shadow: var(--card-box-shadow);
-    background: var(--color-dark-grey);
+    background: var(--color-card);
     padding: var(--padding-large);
     padding: var(--size-large);
     max-width: 850px;
@@ -178,11 +178,10 @@
     border: none;
     width: 100%;
     padding: var(--size-medium);
-    background: var(--color-grey);
+    background: var(--color-input);
     border-radius: var(--border-radius-small);
     justify-items: center;
     color: var(--color-white);
-    box-shadow: inset 0px 0px 0px 2px var(--color-grey);
   }
 
   .submit {

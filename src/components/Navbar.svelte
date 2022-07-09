@@ -1,7 +1,16 @@
 <!-- TODO: Mobile nav -->
 <script lang="ts">
   import { page } from '$app/stores';
+  import { browser } from '$app/env';
   import LogoName from '@components/svgs/LogoName.svelte';
+
+  let theme = 'dark';
+
+  function handleThemeToggle() {
+    console.log(theme);
+    theme = theme === 'dark' ? 'light' : 'dark';
+    browser && document.documentElement.setAttribute('data-theme', theme);
+  }
 </script>
 
 <div class="container">
@@ -12,6 +21,7 @@
       </a>
 
       <div class="nav">
+        <button on:click={handleThemeToggle}>theme toggle</button>
         <a class="link" href="/">Home</a>
         <a class="link" href="/blog/posts">Blog</a>
         <a class="link" href="/contact">Contact</a>
@@ -44,10 +54,11 @@
     z-index: 20;
     width: 349px;
     height: 65px;
+    opacity: 0.4;
   }
 
   .link {
-    color: var(--color-white);
+    color: var(--color-text);
     font-size: var(--font-size-body);
     text-decoration: none;
     padding: var(--size-base);
@@ -60,7 +71,7 @@
     bottom: 0;
     width: 80px;
     height: var(--size-extra-small);
-    background: var(--color-orange);
+    background: var(--color-accent);
     border-radius: 28px;
     z-index: -1;
     transition: 9999s transform 0.2s ease-out;

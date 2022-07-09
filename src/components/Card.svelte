@@ -82,7 +82,7 @@
     border-radius: var(--border-radius-medium);
     width: 100%;
     box-shadow: var(--card-box-shadow);
-    background: var(--color-dark-grey);
+    background: var(--color-card);
     overflow: hidden;
     flex-grow: 1;
   }
@@ -96,7 +96,7 @@
   }
 
   .title {
-    border-left: var(--size-extra-small) solid var(--color-orange);
+    border-left: var(--size-extra-small) solid var(--color-accent);
     padding-left: calc(var(--size-medium) - var(--size-extra-small));
     padding-right: var(--size-medium);
 
@@ -107,7 +107,7 @@
   }
 
   .type {
-    color: var(--color-orange);
+    color: var(--color-accent);
     text-transform: uppercase;
     margin-bottom: var(--size-base);
     font-weight: var(--font-weight-light);

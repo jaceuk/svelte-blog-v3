@@ -6,10 +6,10 @@
   footer {
     position: relative;
     z-index: -1;
-    color: var(--color-white);
+    color: var(--color-text);
     text-align: center;
     padding: var(--size-large);
-    background: var(--color-black);
+    background: var(--color-background);
 
     @media (max-width: 900px) {
       padding: var(--size-medium);

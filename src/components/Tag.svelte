@@ -10,10 +10,10 @@
   .tag {
     padding: var(--size-base) var(--size-medium);
     border-radius: var(--border-radius-small);
-    background: rgba(255, 153, 0, 0.1);
+    background: var(--color-tag-primary);
 
     &.secondary {
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--color-tag-secondary);
     }
   }
 </style>
