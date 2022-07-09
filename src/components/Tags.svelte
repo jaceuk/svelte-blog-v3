@@ -24,10 +24,10 @@
   .tags {
     border-radius: var(--border-radius-medium);
     box-shadow: inset 0px 0px 0px var(--size-extra-small) var(--color-tags-border);
-    padding: var(--size-medium);
+    padding: var(--size-base);
     display: flex;
     flex-wrap: wrap;
-    gap: var(--size-medium);
+    gap: var(--size-base);
 
     @media (max-width: 900px) {
       gap: var(--size-base);
