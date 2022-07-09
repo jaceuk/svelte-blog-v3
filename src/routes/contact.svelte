@@ -177,11 +177,11 @@
   .input {
     border: none;
     width: 100%;
-    padding: var(--size-medium);
+    padding: calc(var(--size-base) * 1.5) var(--size-medium);
     background: var(--color-input);
     border-radius: var(--border-radius-small);
     justify-items: center;
-    color: var(--color-white);
+    color: var(--color-text);
   }
 
   .submit {

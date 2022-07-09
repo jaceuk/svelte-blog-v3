@@ -79,7 +79,7 @@ html[data-theme='light'] {
   --color-background-rgb: var(--color-white-rgb);
   --color-text: var(--color-nearly-black);
   --color-card: var(--color-white);
-  --color-tag-primary: rgba(var(--color-accent-rgb), 0.4);
+  --color-tag-primary: rgba(var(--color-accent-rgb), 0.3);
   --color-tag-secondary: var(--color-pale-grey);
   --color-tags-border: var(--color-pale-grey);
   --color-link-hover: var(--color-nearly-black);

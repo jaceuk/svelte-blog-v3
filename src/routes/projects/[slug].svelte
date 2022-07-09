@@ -61,7 +61,6 @@
   const lighthouseScores = data.lighthouseScores;
 
   let showModal = false;
-  let siteOnline = false;
 
   function handleToggleModal() {
     showModal = !showModal;
@@ -175,7 +174,7 @@
 
   .overview {
     display: flex;
-    gap: var(--size-extra-large);
+    gap: var(--size-large);
     flex-direction: column;
 
     @media (max-width: 1200px) {

@@ -48,6 +48,10 @@ button {
   @media (max-width: 900px) {
     border-radius: 0;
   }
+
+  [data-theme='light'] & {
+    background: linear-gradient(135deg, var(--color-panel-light) 0%, var(--color-panel-dark) 75%);
+  }
 }
 
 .content {
