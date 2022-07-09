@@ -1,9 +1,12 @@
 <script lang="ts">
   export let handleClick = () => {};
   export let type = '';
+  export let label = '';
 </script>
 
-<button class:link={type === 'link'} on:click={handleClick}><slot /></button>
+<button aria-label={label} class:link={type === 'link'} class:icon={type === 'icon'} on:click={handleClick}
+  ><slot /></button
+>
 
 <style lang="scss">
   button {
@@ -35,6 +38,20 @@
       color: var(--color-accent);
       box-shadow: none;
       padding: 0;
+      border: none;
+
+      &:hover,
+      &:focus {
+        color: var(--color-link-hover);
+      }
+    }
+
+    &.icon {
+      border-radius: none;
+      background-color: transparent;
+      color: var(--color-accent);
+      box-shadow: none;
+      padding: var(--size-base);
       border: none;
 
       &:hover,

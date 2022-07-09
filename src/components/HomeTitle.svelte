@@ -1,9 +1,9 @@
 <script>
   import Button from '@components/Button.svelte';
   import ArrowDown from '@components/svgs/ArrowDown.svelte';
+  import Star from '@components/svgs/Star.svelte';
+  import Rocket from '@components/svgs/Rocket.svelte';
   import moon from '@images/moon.svg';
-  import rocket from '@images/rocket.svg';
-  import star from '@images/star.svg';
   import Transition from '@components/Transition.svelte';
 
   function handleClick() {
@@ -29,17 +29,17 @@
 
 <div>
   <img class="moon" src={moon} alt="" />
-  <img class="rocket" src={rocket} alt="" />
+  <div class="rocket"><Rocket /></div>
   <div>
     <Transition>
-      <img class="star" src={star} alt="" />
-      <img class="star" src={star} alt="" />
-      <img class="star" src={star} alt="" />
-      <img class="star" src={star} alt="" />
-      <img class="star small" src={star} alt="" />
-      <img class="star small" src={star} alt="" />
-      <img class="star small" src={star} alt="" />
-      <img class="star small" src={star} alt="" />
+      <div class="star"><Star /></div>
+      <div class="star"><Star /></div>
+      <div class="star"><Star /></div>
+      <div class="star"><Star /></div>
+      <div class="star small"><Star /></div>
+      <div class="star small"><Star /></div>
+      <div class="star small"><Star /></div>
+      <div class="star small"><Star /></div>
     </Transition>
   </div>
 </div>

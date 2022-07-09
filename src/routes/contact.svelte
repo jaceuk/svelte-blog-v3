@@ -108,7 +108,7 @@
           <Alert type="success">Your message was sent successfully.</Alert>
         {/if}
 
-        {#if outcome.status !== 400}
+        {#if outcome.status === 400}
           <Alert type="error">ReCAPTCHA failed. Please try again.</Alert>
         {/if}
 

@@ -1,16 +1,8 @@
 <!-- TODO: Mobile nav -->
 <script lang="ts">
   import { page } from '$app/stores';
-  import { browser } from '$app/env';
   import LogoName from '@components/svgs/LogoName.svelte';
-
-  let theme = 'dark';
-
-  function handleThemeToggle() {
-    console.log(theme);
-    theme = theme === 'dark' ? 'light' : 'dark';
-    browser && document.documentElement.setAttribute('data-theme', theme);
-  }
+  import ThemeSwitch from '@components/ThemeSwitch.svelte';
 </script>
 
 <div class="container">
@@ -21,10 +13,10 @@
       </a>
 
       <div class="nav">
-        <button on:click={handleThemeToggle}>theme toggle</button>
         <a class="link" href="/">Home</a>
         <a class="link" href="/blog/posts">Blog</a>
         <a class="link" href="/contact">Contact</a>
+        <ThemeSwitch />
         <span
           class="underline"
           class:home={$page.url.pathname === '/' || $page.url.pathname.startsWith('/projects/')}
