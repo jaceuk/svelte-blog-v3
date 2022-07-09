@@ -75,8 +75,6 @@
 
 <PageHeader {type}>{title}</PageHeader>
 
-<!-- TODO: check to see if site is online on page load -->
-
 <PagePanel>
   <div class="container">
     <Transition>
@@ -91,9 +89,11 @@
               Screenshot<NewWindow />
             </Button>
 
-            <Link label={`Read more about ${title}`} href={url} target="_blank">
-              Live site<NewWindow />
-            </Link>
+            {#if url}
+              <Link label={`Read more about ${title}`} href={url} target="_blank">
+                Live site<NewWindow />
+              </Link>
+            {/if}
           </div>
         </div>
 

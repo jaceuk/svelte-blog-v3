@@ -1,4 +1,3 @@
-<!-- TODO: Mobile nav -->
 <script lang="ts">
   import { page } from '$app/stores';
   import LogoName from '@components/svgs/LogoName.svelte';
