@@ -22,6 +22,7 @@
   --color-tags-border: var(--color-grey);
   --color-link-hover: var(--color-white);
   --color-input: var(--color-grey);
+  --color-overlay: rgba(var(--color-black-rgb), 0.8);
   --color-accent: #ff9900;
   --color-accent-rgb: 255, 153, 0;
   --color-good: #0c6;
@@ -84,6 +85,7 @@ html[data-theme='light'] {
   --color-tags-border: var(--color-pale-grey);
   --color-link-hover: var(--color-nearly-black);
   --color-input: var(--color-pale-grey);
+  --color-overlay: rgba(var(--color-white-rgb), 0.8);
   --color-accent: #c74845;
   --color-accent-rgb: 199, 72, 69;
   --color-good: #008341;

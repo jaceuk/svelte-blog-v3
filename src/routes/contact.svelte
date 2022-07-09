@@ -150,14 +150,21 @@
     border-radius: var(--border-radius-medium);
     box-shadow: var(--card-box-shadow);
     background: var(--color-card);
-    padding: var(--padding-large);
     padding: var(--size-large);
     max-width: 850px;
+
+    @media (max-width: 900px) {
+      padding: var(--size-medium);
+    }
   }
 
   form {
     display: grid;
     gap: var(--size-large);
+
+    @media (max-width: 900px) {
+      gap: var(--size-medium);
+    }
   }
 
   .form-field {
@@ -182,6 +189,10 @@
     border-radius: var(--border-radius-small);
     justify-items: center;
     color: var(--color-text);
+
+    @media (max-width: 900px) {
+      padding: var(--size-base);
+    }
   }
 
   .submit {

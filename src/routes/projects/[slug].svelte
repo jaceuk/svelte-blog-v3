@@ -64,7 +64,7 @@
 
   function handleToggleModal() {
     showModal = !showModal;
-    document.body.classList.toggle('modal-open');
+    document.body.classList.toggle('no-scroll');
   }
 </script>
 

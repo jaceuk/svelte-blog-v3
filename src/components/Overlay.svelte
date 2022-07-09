@@ -8,7 +8,7 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background: rgba(var(--color-black-rgb), 0.8);
+    background: var(--color-overlay);
     top: 0;
     left: 0;
     right: 0;

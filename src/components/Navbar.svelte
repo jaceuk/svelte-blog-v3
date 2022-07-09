@@ -3,6 +3,7 @@
   import { page } from '$app/stores';
   import LogoName from '@components/svgs/LogoName.svelte';
   import ThemeSwitch from '@components/ThemeSwitch.svelte';
+  import MobileMenu from '@components/MobileMenu.svelte';
 </script>
 
 <div class="container">
@@ -12,11 +13,10 @@
         <LogoName />
       </a>
 
-      <div class="nav">
+      <div class="nav desktop">
         <a class="link" href="/">Home</a>
         <a class="link" href="/blog/posts">Blog</a>
         <a class="link" href="/contact">Contact</a>
-        <ThemeSwitch />
         <span
           class="underline"
           class:projects={$page.url.pathname.startsWith('/projects/')}
@@ -24,6 +24,12 @@
           class:blog={$page.url.pathname === '/blog/posts'}
           class:contact={$page.url.pathname === '/contact'}
         />
+        <ThemeSwitch />
+      </div>
+
+      <div class="nav mobile">
+        <ThemeSwitch />
+        <MobileMenu />
       </div>
     </nav>
   </div>
@@ -45,9 +51,13 @@
 
   .logo-link {
     z-index: 20;
-    width: 349px;
-    height: 65px;
+    width: 265px;
+    height: 43px;
     opacity: 0.4;
+
+    @media (max-width: 900px) {
+      width: 180px;
+    }
   }
 
   .link {
@@ -106,5 +116,21 @@
     align-items: center;
     z-index: 20;
     position: relative;
+
+    &.mobile {
+      display: none;
+
+      @media (max-width: 900px) {
+        display: flex;
+      }
+    }
+
+    &.desktop {
+      display: flex;
+
+      @media (max-width: 900px) {
+        display: none;
+      }
+    }
   }
 </style>

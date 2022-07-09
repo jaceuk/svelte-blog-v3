@@ -47,9 +47,9 @@
     }
 
     &.icon {
-      border-radius: none;
+      border-radius: 0;
       background-color: transparent;
-      color: var(--color-accent);
+      color: var(--color-text);
       box-shadow: none;
       padding: var(--size-base);
       border: none;

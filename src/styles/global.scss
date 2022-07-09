@@ -14,7 +14,7 @@ body {
   padding: var(--size-medium);
   transition: background 0.2s;
 
-  &.modal-open {
+  &.no-scroll {
     overflow: hidden;
   }
 
