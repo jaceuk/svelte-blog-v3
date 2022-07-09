@@ -19,7 +19,8 @@
         <ThemeSwitch />
         <span
           class="underline"
-          class:home={$page.url.pathname === '/' || $page.url.pathname.startsWith('/projects/')}
+          class:projects={$page.url.pathname.startsWith('/projects/')}
+          class:home={$page.url.pathname === '/'}
           class:blog={$page.url.pathname === '/blog/posts'}
           class:contact={$page.url.pathname === '/contact'}
         />
@@ -84,6 +85,10 @@
       transform: translatex(205px);
       transition: transform 0.2s ease-out;
       width: 104px;
+    }
+
+    &.projects {
+      display: none;
     }
   }
 
