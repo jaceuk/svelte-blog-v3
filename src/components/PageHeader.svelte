@@ -32,6 +32,10 @@
 
   .panel {
     padding-top: 129px;
+
+    @media (max-width: 900px) {
+      padding-top: 100px;
+    }
   }
 
   .title {
