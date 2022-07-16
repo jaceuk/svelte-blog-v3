@@ -32,8 +32,4 @@
       grid-gap: var(--size-large);
     }
   }
-
-  .h3 {
-    margin-bottom: var(--size-large);
-  }
 </style>
