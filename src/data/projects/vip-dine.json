@@ -10,11 +10,7 @@
   },
   "text": [
     "I was responsible for the design and development of this site using Gatsby and React as the core front end technologies.",
-    "The registration page features a custom React component that interfaces with several third party APIs including address lookup, SMS verification and Stripe payment integration."
+    "The registration page features a custom React component that interfaces with several third party APIs including address lookup, SMS verification and Stripe payment."
   ],
-  "lighthouseScores": ["92", "95", "92", "90"],
-  "notes": [
-    "The registration process uses Stripe to process payments.",
-    "Fully responsive across all mobile devices and tablets."
-  ]
+  "lighthouseScores": ["92", "95", "92", "90"]
 }

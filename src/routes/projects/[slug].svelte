@@ -1,4 +1,3 @@
-<!-- TODO: Create new screenshot thumbnails -->
 <script context="module" lang="ts">
   interface IParams {
     params: IParam;
@@ -111,17 +110,6 @@
     <Transition>
       <div class="lighthouse">
         <Lighthouse {lighthouseScores} />
-      </div>
-    </Transition>
-
-    <!-- TODO: Redo notes -->
-
-    <Transition>
-      <div class="features text-block">
-        <h2>Notes</h2>
-        {#each notes as note}
-          <p>{note}</p>
-        {/each}
       </div>
     </Transition>
   </div>

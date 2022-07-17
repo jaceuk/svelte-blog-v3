@@ -13,9 +13,5 @@
     "The bespoke theme features subtle transition animations and is fully responsive across all mobile devices and tablets.",
     "The client has complete control over their website without being able to make breaking changes."
   ],
-  "lighthouseScores": ["73", "89", "83", "92"],
-  "notes": [
-    "Subtle transitions were added using the Animate On Scroll library.",
-    "Fully responsive across all mobile devices and tablets."
-  ]
+  "lighthouseScores": ["73", "89", "83", "92"]
 }

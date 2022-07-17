@@ -44,6 +44,6 @@ Fast forward to today and your typical front end tech stack might be:
 
 The comparison between then and now is pretty scary and staying up to date is a real problem. Not only that but but there's always new technologies to learn and they never get less complex.
 
-I figure I can help by writing blog posts to keep myself up to date and to help me learn. They say the best way to learn is to teach so I'm going to teach myself and if it's ever of use to anyone else then that's an added bonus.
+I figure I can help by writing blog posts to keep myself up to date and to help me learn and remember. They say the best way to learn is to teach so I'm going to teach myself and if it's ever of use to anyone else then that's an added bonus.
 
 So let's see how I get on and let's hope that this doesn't just become yet another abandoned blog full of the best intentions.

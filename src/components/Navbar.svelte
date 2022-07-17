@@ -51,7 +51,6 @@
   .logo-link {
     z-index: 20;
     width: 265px;
-    height: 43px;
     opacity: 0.4;
 
     @media (max-width: 900px) {
@@ -104,7 +103,7 @@
   nav {
     display: flex;
     gap: var(--size-base);
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     width: 100%;
   }

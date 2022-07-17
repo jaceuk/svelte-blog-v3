@@ -10,12 +10,8 @@
   },
   "text": [
     "This web app allows players to plan out their in game characters without being in the game itself.",
-    "The web app is powered be data retrieved from a REST API with player choices retained between visits.",
+    "The web app is powered be data retrieved from a REST API built using the Slim micro framework for PHP.",
     "I was responsible for all aspects of this project."
   ],
-  "lighthouseScores": ["93", "97", "100", "100"],
-  "notes": [
-    "The site gets it's data from a REST API built using the Slim micro framework for PHP with a bespoke admin area for data entry.",
-    "Fully responsive across all mobile devices and tablets."
-  ]
+  "lighthouseScores": ["93", "97", "100", "100"]
 }
