@@ -85,7 +85,7 @@
 </script>
 
 <svelte:head>
-  <title>Contact</title>
+  <title>Jason Newington - Contact</title>
   <script
     src="https://www.google.com/recaptcha/api.js?render={import.meta.env.VITE_RECAPTCHA_SITE_KEY}"
     async

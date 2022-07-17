@@ -15,7 +15,7 @@
 </script>
 
 <div class="button">
-  <Button label="Toggle menu" type="icon" handleClick={handleMenuToggle}>
+  <Button ariaLabel="Toggle menu" type="icon" handleClick={handleMenuToggle}>
     {#if showMenu}
       <Close />
     {:else}

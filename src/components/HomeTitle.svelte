@@ -22,7 +22,7 @@
 
   <Transition>
     <div class="button">
-      <Button {handleClick}>Featured projects<ArrowDown /></Button>
+      <Button {handleClick} ariaLabel="Scroll to featured projects">Featured projects<ArrowDown /></Button>
     </div>
   </Transition>
 </div>

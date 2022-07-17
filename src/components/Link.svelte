@@ -1,11 +1,11 @@
 <script lang="ts">
   export let href: string;
   export let disabled = false;
-  export let label = '';
+  export let ariaLabel: string | undefined = undefined;
   export let target = '';
 </script>
 
-<a {href} aria-disabled={disabled} aria-label={label} {target}><slot /></a>
+<a {href} aria-disabled={disabled} aria-label={ariaLabel} {target}><slot /></a>
 
 <style lang="scss">
   a {

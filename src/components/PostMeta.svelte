@@ -18,7 +18,7 @@
   {#if tags}
     in
     {#each tags.sort() as tag, i}
-      <a href={`/tag/${formatForURL(tag)}`}>
+      <a href={`/tag/${formatForURL(tag)}`} aria-label={`View posts tagged with ${tag}`}>
         {tag}
       </a>
       {#if i < tags.length - 1}

@@ -6,6 +6,10 @@
 
 <svelte:head>
   <title>Jason Newington - Developer, Designer and Geek</title>
+  <meta
+    name="description"
+    content="I'm a passionate Front End Developer who focuses on writing clean, reusable, standards compliant code with accessiblity and best practice firmly in mind."
+  />
 </svelte:head>
 
 <header class="panel">

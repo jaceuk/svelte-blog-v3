@@ -14,13 +14,13 @@
 </script>
 
 <div class="pagination">
-  <Link disabled={page <= 1} label="Next posts" href={page > 1 ? `/${folderPath}/${pagePath}?page=${page - 1}` : ''}
+  <Link disabled={page <= 1} ariaLabel="Next posts" href={page > 1 ? `/${folderPath}/${pagePath}?page=${page - 1}` : ''}
     ><ChevronLeft />
   </Link>
 
   <Link
     disabled={page >= totalNumberOfPages}
-    label="Previous posts"
+    ariaLabel="Previous posts"
     href={page < totalNumberOfPages ? `/${folderPath}/${pagePath}?page=${page + 1}` : ''}
     ><ChevronRight />
   </Link>

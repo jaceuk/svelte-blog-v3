@@ -55,8 +55,8 @@
   const type = data.type;
   const overview = data.text;
   const slug = data.slug;
-  const notes = data.notes;
   const skills = data.skills;
+  const intro = data.intro;
   const lighthouseScores = data.lighthouseScores;
 
   let showModal = false;
@@ -69,7 +69,7 @@
 
 <svelte:head>
   <title>{title}</title>
-  <meta name="description" content="xxxx" />
+  <meta name="description" content={intro} />
 </svelte:head>
 
 <PageHeader {type}>{title}</PageHeader>
@@ -84,12 +84,12 @@
           </button>
 
           <div class="links">
-            <Button type="link" handleClick={handleToggleModal}>
+            <Button type="link" handleClick={handleToggleModal} ariaLabel={`View screenshot for ${title}`}>
               Screenshot<NewWindow />
             </Button>
 
             {#if url}
-              <Link label={`Read more about ${title}`} href={url} target="_blank">
+              <Link ariaLabel={`Visit the live website for ${title} (opens in a new tab)`} href={url} target="_blank">
                 Live site<NewWindow />
               </Link>
             {/if}

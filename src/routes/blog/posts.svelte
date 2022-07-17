@@ -30,7 +30,8 @@
 </script>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>Jason Newington - Blog</title>
+  <meta name="description" content="Every time I learn something new it pushes some old stuff out." />
 </svelte:head>
 
 <PageHeader>Blog posts</PageHeader>

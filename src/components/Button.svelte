@@ -1,10 +1,10 @@
 <script lang="ts">
   export let handleClick = () => {};
   export let type = '';
-  export let label = '';
+  export let ariaLabel: string | undefined = undefined;
 </script>
 
-<button aria-label={label} class:link={type === 'link'} class:icon={type === 'icon'} on:click={handleClick}
+<button aria-label={ariaLabel} class:link={type === 'link'} class:icon={type === 'icon'} on:click={handleClick}
   ><slot /></button
 >
 

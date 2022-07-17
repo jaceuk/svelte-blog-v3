@@ -20,7 +20,7 @@
   }
 </script>
 
-<Button label="Toggle dark/light mode" type="icon" handleClick={handleThemeToggle}>
+<Button ariaLabel="Toggle dark/light mode" type="icon" handleClick={handleThemeToggle}>
   {#if theme === 'light'}
     <HalfMoon />
   {:else}

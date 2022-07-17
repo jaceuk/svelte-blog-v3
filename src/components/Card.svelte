@@ -57,7 +57,7 @@
         </div>
 
         <div class="link">
-          <Link label={`Read more about ${title}`} href={`/${type ? 'projects' : 'blog'}/${slug}`}>
+          <Link ariaLabel={`Read more about ${title}`} href={`/${type ? 'projects' : 'blog'}/${slug}`}>
             Read more<ArrowRight />
           </Link>
         </div>
