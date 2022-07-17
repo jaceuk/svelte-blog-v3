@@ -1,9 +1,10 @@
 <script lang="ts">
   import Pagination from '@components/Pagination.svelte';
   import Card from '@components/Card.svelte';
+  import type { IPosts } from '@lib/types';
   import PagePanel from '@components/PagePanel.svelte';
 
-  export let posts: any;
+  export let posts: IPosts;
   export let page: number;
   export let postCount: number;
   export let tag = '';

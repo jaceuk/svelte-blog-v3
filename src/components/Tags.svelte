@@ -1,7 +1,12 @@
 <script lang="ts">
   import Tag from '@components/Tag.svelte';
 
-  export let skills: any;
+  interface ISkills {
+    primary: [];
+    secondary: [];
+  }
+
+  export let skills: ISkills;
 
   const skillsPrimary = skills.primary.sort();
   const skillsSecondary = skills.secondary.sort();

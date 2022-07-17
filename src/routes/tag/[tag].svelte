@@ -31,8 +31,9 @@
 
 <script lang="ts">
   import Posts from '@components/Posts.svelte';
+  import type { IPosts } from '@lib/types';
 
-  export let posts: any;
+  export let posts: IPosts;
   export let page: number;
   export let tagParam: string;
   export let postCount: number;

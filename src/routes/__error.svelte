@@ -1,7 +1,9 @@
 <script context="module" lang="ts">
   interface ILoad {
     status: number;
-    error: any;
+    error: {
+      message: string;
+    };
   }
 
   export function load({ status, error }: ILoad) {

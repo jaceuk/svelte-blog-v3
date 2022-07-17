@@ -23,8 +23,9 @@
 <script lang="ts">
   import Posts from '@components/Posts.svelte';
   import PageHeader from '@components/PageHeader.svelte';
+  import type { IPosts } from '@lib/types';
 
-  export let posts: any;
+  export let posts: IPosts;
   export let page: number;
   export let postCount: number;
 </script>

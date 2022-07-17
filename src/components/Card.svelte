@@ -11,20 +11,6 @@
   export let slug: string;
   export let type = '';
   export let imageSRC = '';
-
-  let isInView: boolean;
-
-  const options = {
-    unobserveOnEnter: true,
-  };
-
-  interface IProps {
-    detail: any;
-  }
-
-  const handleEnter = ({ detail }: IProps) => {
-    isInView = detail.inView;
-  };
 </script>
 
 <Transition>

@@ -9,11 +9,13 @@
     unobserveOnEnter: true,
   };
 
-  interface IProps {
-    detail: any;
+  interface IDetail {
+    detail: {
+      inView: boolean;
+    };
   }
 
-  const handleEnter = ({ detail }: IProps) => {
+  const handleEnter = ({ detail }: IDetail) => {
     isInView = detail.inView;
   };
 </script>

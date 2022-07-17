@@ -5,7 +5,7 @@
   export let tags: string[];
 
   function formatDate(date: string) {
-    const options: any = { year: 'numeric', month: 'long', day: 'numeric' };
+    const options: Record<string, unknown> = { year: 'numeric', month: 'long', day: 'numeric' };
     const dateObject = new Date(date).toLocaleDateString('en-us', options);
     const formattedDate = dateObject;
 

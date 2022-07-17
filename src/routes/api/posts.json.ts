@@ -6,6 +6,7 @@ let postsPerPageValue: number;
 postsPerPage.subscribe((value: number) => {
   postsPerPageValue = value;
 });
+
 interface IUrl {
   url: any;
 }

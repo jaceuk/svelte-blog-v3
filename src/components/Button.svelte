@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let handleClick = () => {};
+  export let handleClick: () => void;
   export let type = '';
   export let ariaLabel: string | undefined = undefined;
 </script>
