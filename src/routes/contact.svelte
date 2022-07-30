@@ -39,20 +39,24 @@
   async function handleSubmit() {
     processing = true;
 
-    window.grecaptcha.ready(() => {
-      window.grecaptcha
-        .execute(import.meta.env.VITE_RECAPTCHA_SITE_KEY, { action: 'contactSubmit' })
-        .then(async (token: string) => {
-          const response = await checkRecaptcha(token);
-          if (response && response.status === 200) {
-            await sendEmail();
-          } else {
-            outcome.status = 400;
-            outcome.message = 'ReCaptcha verification failed.';
-          }
-          processing = false;
-        });
-    });
+    await sendEmail();
+
+    processing = false;
+
+    // window.grecaptcha.ready(() => {
+    //   window.grecaptcha
+    //     .execute(import.meta.env.VITE_RECAPTCHA_SITE_KEY, { action: 'contactSubmit' })
+    //     .then(async (token: string) => {
+    //       const response = await checkRecaptcha(token);
+    //       if (response && response.status === 200) {
+    //         await sendEmail();
+    //       } else {
+    //         outcome.status = 400;
+    //         outcome.message = 'ReCaptcha verification failed.';
+    //       }
+    //       processing = false;
+    //     });
+    // });
   }
 
   async function sendEmail() {
@@ -86,10 +90,10 @@
 
 <svelte:head>
   <title>Jason Newington - Contact</title>
-  <script
+  <!-- <script
     src="https://www.google.com/recaptcha/api.js?render={import.meta.env.VITE_RECAPTCHA_SITE_KEY}"
     async
-    defer></script>
+    defer></script> -->
 </svelte:head>
 
 <PageHeader>Let's talk</PageHeader>
@@ -115,7 +119,7 @@
         {#if outcome.status === 500}
           <Alert type="error"
             >There was a problem sending your message, please try again.<br />If the problem perists please email
-            info@jace.info.{outcome.message}</Alert
+            info@jace.info.</Alert
           >
         {/if}
 
