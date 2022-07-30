@@ -1,6 +1,10 @@
 import nodemailer from 'nodemailer';
 
-export async function post({ request }) {
+interface IProps {
+  request: Request;
+}
+
+export async function post({ request }: IProps) {
   const formBody = await request.json();
   const { name, email, message } = formBody;
 
