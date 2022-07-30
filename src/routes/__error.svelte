@@ -29,7 +29,6 @@
     Error 404
   {:else}
     Error 500
-    {message}
   {/if}
 </PageHeader>
 

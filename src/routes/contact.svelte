@@ -39,24 +39,20 @@
   async function handleSubmit() {
     processing = true;
 
-    await sendEmail();
-
-    processing = false;
-
-    // window.grecaptcha.ready(() => {
-    //   window.grecaptcha
-    //     .execute(import.meta.env.VITE_RECAPTCHA_SITE_KEY, { action: 'contactSubmit' })
-    //     .then(async (token: string) => {
-    //       const response = await checkRecaptcha(token);
-    //       if (response && response.status === 200) {
-    //         await sendEmail();
-    //       } else {
-    //         outcome.status = 400;
-    //         outcome.message = 'ReCaptcha verification failed.';
-    //       }
-    //       processing = false;
-    //     });
-    // });
+    window.grecaptcha.ready(() => {
+      window.grecaptcha
+        .execute(import.meta.env.VITE_RECAPTCHA_SITE_KEY, { action: 'contactSubmit' })
+        .then(async (token: string) => {
+          const response = await checkRecaptcha(token);
+          if (response && response.status === 200) {
+            await sendEmail();
+          } else {
+            outcome.status = 400;
+            outcome.message = 'ReCaptcha verification failed.';
+          }
+          processing = false;
+        });
+    });
   }
 
   async function sendEmail() {
