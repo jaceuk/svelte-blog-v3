@@ -1,24 +1,11 @@
-<script type="ts">
-  import Overlay from '@components/Overlay.svelte';
-  import Loader from '@components/Loader.svelte';
-  import Alert from '@components/Alert.svelte';
-  import PagePanel from '@components/PagePanel.svelte';
-  import Button from '@components/Button.svelte';
-  import PageHeader from '@components/PageHeader.svelte';
-  import Transition from '@components/Transition.svelte';
-
-  interface IOutcome {
-    status: number;
-    message: string;
-  }
-
+<script lang="ts">
   let name: string;
   let email: string;
   let message: string;
 
   let processing = false;
-  let response: IOutcome;
-  let outcome: IOutcome = { status: 0, message: '' };
+  let response;
+  let outcome = { status: 0, message: '' };
 
   async function handleSubmit() {
     processing = true;
@@ -53,114 +40,37 @@
 </script>
 
 <svelte:head>
-  <title>Jason Newington - Contact</title>
+  <title>Contact</title>
 </svelte:head>
 
-<PageHeader>Let's talk</PageHeader>
-
 {#if processing}
-  <Overlay><Loader>Sending your message</Loader></Overlay>
+  Sending your message
 {/if}
 
-<PagePanel>
-  <Transition>
-    <div class="h3">Please get in touch to talk about, well, anything really.</div>
+{#if outcome.status === 200}
+  Your message was sent successfully.
+{/if}
 
-    <div class="container">
-      <form on:submit|preventDefault={handleSubmit}>
-        {#if outcome.status === 200}
-          <Alert type="success">Your message was sent successfully.</Alert>
-        {/if}
+{#if outcome.status === 500}
+  <p><strong>{outcome.message}</strong></p>
+  There was a problem sending your message, please try again.<br />If the problem perists please email info@jace.info.
+{/if}
 
-        {#if outcome.status === 400}
-          <Alert type="error">ReCAPTCHA failed. Please try again.</Alert>
-        {/if}
+<form on:submit|preventDefault={handleSubmit}>
+  <div>
+    <label for="name"> Your name (required) </label>
+    <input id="name" type="text" required bind:value={name} />
+  </div>
 
-        {#if outcome.status === 500}
-          <p><strong>{outcome.message}</strong></p>
-          <Alert type="error"
-            >There was a problem sending your message, please try again.<br />If the problem perists please email
-            info@jace.info.</Alert
-          >
-        {/if}
+  <div>
+    <label for="email">Your email address (required)</label>
+    <input id="email" type="email" required bind:value={email} />
+  </div>
 
-        <div class="form-field">
-          <label for="name" class="label"> Your name <span class="small required">(required)</span></label>
-          <input id="name" type="text" class="input" required bind:value={name} />
-        </div>
+  <div>
+    <label for="message">Your message (required)</label>
+    <textarea id="message" rows={5} required bind:value={message} />
+  </div>
 
-        <div class="form-field">
-          <label for="email" class="label">Your email address <span class="small required">(required)</span></label>
-          <input id="email" type="email" class="input" required bind:value={email} />
-        </div>
-
-        <div class="form-field">
-          <label for="message" class="label">Your message <span class="small required">(required)</span></label>
-          <textarea id="message" class="input" rows={8} required bind:value={message} />
-        </div>
-
-        <div class="submit">
-          <input class="button submit" type="submit" value="Send your message" />
-        </div>
-      </form>
-    </div>
-  </Transition>
-</PagePanel>
-
-<style type="scss">
-  .required {
-    color: var(--color-accent);
-  }
-  .container {
-    border-radius: var(--border-radius-medium);
-    box-shadow: var(--card-box-shadow);
-    background: var(--color-card);
-    padding: var(--size-large);
-    max-width: 850px;
-
-    @media (max-width: 900px) {
-      padding: var(--size-medium);
-    }
-  }
-
-  form {
-    display: grid;
-    gap: var(--size-large);
-
-    @media (max-width: 900px) {
-      gap: var(--size-medium);
-    }
-  }
-
-  .form-field {
-    display: grid;
-    gap: var(--size-base);
-  }
-
-  .h3 {
-    margin-bottom: var(--size-large);
-    max-width: var(--size-content-max-width);
-  }
-
-  .label {
-    display: block;
-  }
-
-  .input {
-    border: none;
-    width: 100%;
-    padding: calc(var(--size-base) * 1.5) var(--size-medium);
-    background: var(--color-input);
-    border-radius: var(--border-radius-small);
-    justify-items: center;
-    color: var(--color-text);
-
-    @media (max-width: 900px) {
-      padding: var(--size-base);
-    }
-  }
-
-  .submit {
-    margin: 0 auto;
-  }
-</style>
+  <input class="button submit" type="submit" value="Send your message" />
+</form>
