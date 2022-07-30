@@ -86,10 +86,10 @@
 
 <svelte:head>
   <title>Jason Newington - Contact</title>
-  <!-- <script
+  <script
     src="https://www.google.com/recaptcha/api.js?render={import.meta.env.VITE_RECAPTCHA_SITE_KEY}"
     async
-    defer></script> -->
+    defer></script>
 </svelte:head>
 
 <PageHeader>Let's talk</PageHeader>
