@@ -21,6 +21,7 @@
   import PageHeader from '@components/PageHeader.svelte';
 
   export let status: number;
+  export let message: string;
 </script>
 
 <PageHeader>
@@ -28,6 +29,7 @@
     Error 404
   {:else}
     Error 500
+    {message}
   {/if}
 </PageHeader>
 
