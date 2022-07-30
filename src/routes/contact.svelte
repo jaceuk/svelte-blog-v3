@@ -115,7 +115,7 @@
         {#if outcome.status === 500}
           <Alert type="error"
             >There was a problem sending your message, please try again.<br />If the problem perists please email
-            info@jace.info.</Alert
+            info@jace.info.{outcome.message}</Alert
           >
         {/if}
 
