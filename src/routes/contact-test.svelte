@@ -11,7 +11,7 @@
     processing = true;
 
     try {
-      const submit = await fetch('/api/contact', {
+      const submit = await fetch('/api/contact-test', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
