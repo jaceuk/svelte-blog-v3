@@ -63,10 +63,6 @@
 </PagePanel>
 
 <style type="scss">
-  .panel {
-    padding: var(--size-extra-large);
-  }
-
   .post-content {
     display: flex;
     gap: var(--size-medium);
