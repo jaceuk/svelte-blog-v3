@@ -22,11 +22,7 @@
 
   async function handleSubmit() {
     processing = true;
-    await sendEmail();
-    processing = false;
-  }
 
-  async function sendEmail() {
     try {
       const submit = await fetch('/api/contact', {
         method: 'POST',
@@ -42,7 +38,6 @@
 
       response = await submit.json();
       outcome = response;
-      console.log(outcome.message);
 
       name = '';
       email = '';
@@ -52,6 +47,8 @@
       outcome.message = 'Server failed to respond.';
       console.log(error);
     }
+
+    processing = false;
   }
 </script>
 
@@ -80,6 +77,7 @@
         {/if}
 
         {#if outcome.status === 500}
+          <p><strong>{outcome.message}</strong></p>
           <Alert type="error"
             >There was a problem sending your message, please try again.<br />If the problem perists please email
             info@jace.info.</Alert
@@ -102,7 +100,7 @@
         </div>
 
         <div class="submit">
-          <Button>Send your message</Button>
+          <input class="button submit" type="submit" value="Send your message" />
         </div>
       </form>
     </div>
