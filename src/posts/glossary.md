@@ -53,6 +53,10 @@ The useReducer hook returns an array that holds the current state value and a di
 
 ## Miscellaneous
 
+### Debounce
+
+A function that makes sure your code is only triggered once per user input. It works by only running your code if there has been no input for a specified amount of time.
+
 ### Reducer
 
 A reducer is a pure function that takes the current state and an action, and returns the next state i.e. (state, action) => newState.
